@@ -1,0 +1,26 @@
+<dl>
+  <dt>Email</dt>
+  <dd><%= h @user.email -%></dd>
+  <dt>Crypted password</dt>
+  <dd><%= h @user.crypted_password -%></dd>
+  <dt>Password salt</dt>
+  <dd><%= h @user.password_salt -%></dd>
+  <dt>Persistance token</dt>
+  <dd><%= h @user.persistance_token -%></dd>
+  <dt>First name</dt>
+  <dd><%= h @user.first_name -%></dd>
+  <dt>Availability starts</dt>
+  <dd><%= h @user.availability_starts -%></dd>
+  <dt>Availability ends</dt>
+  <dd><%= h @user.availability_ends -%></dd>
+  <dt>Hours per week</dt>
+  <dd><%= h @user.hours_per_week -%></dd>
+  <dt>Notes</dt>
+  <dd><%= h @user.notes -%></dd>
+</dl>
+ 
+<p>
+  <%= link_to 'Edit', edit_user_path(@user) -%>
+  |
+  <%= link_to 'Back', :back -%>
+</p>

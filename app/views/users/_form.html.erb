@@ -1,0 +1,22 @@
+<%= form.error_messages %>
+ 
+<dl>
+  <dt><%= form.label :email -%></dt>
+  <dd><%= form.text_field :email -%></dd>
+  <dt><%= form.label :crypted_password -%></dt>
+  <dd><%= form.text_field :crypted_password -%></dd>
+  <dt><%= form.label :password_salt -%></dt>
+  <dd><%= form.text_field :password_salt -%></dd>
+  <dt><%= form.label :persistance_token -%></dt>
+  <dd><%= form.text_field :persistance_token -%></dd>
+  <dt><%= form.label :first_name -%></dt>
+  <dd><%= form.text_field :first_name -%></dd>
+  <dt><%= form.label :availability_starts -%></dt>
+  <dd><%= form.date_select :availability_starts -%></dd>
+  <dt><%= form.label :availability_ends -%></dt>
+  <dd><%= form.date_select :availability_ends -%></dd>
+  <dt><%= form.label :hours_per_week -%></dt>
+  <dd><%= form.text_field :hours_per_week -%></dd>
+  <dt><%= form.label :notes -%></dt>
+  <dd><%= form.text_area :notes -%></dd>
+</dl>
