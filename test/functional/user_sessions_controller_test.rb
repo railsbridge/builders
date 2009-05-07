@@ -10,8 +10,7 @@ class UserSessionsControllerTest < ActionController::TestCase
     should_assign_to(:user_session)
   end
   
-  context "on PUT to create" do
-    
+  context "on PUT to create" do    
     context "with valid credentials" do
       setup do
         @user = Factory(:user)
@@ -33,4 +32,18 @@ class UserSessionsControllerTest < ActionController::TestCase
       should_render_template :new
     end    
   end
+  
+  authenticated_user do
+    context "on DELETE to :destroy" do
+      setup { delete :destroy }    
+
+      should_redirect_to('login') { login_path }
+      should_set_the_flash_to /logout successful/i
+    
+      should "destroy the session" do
+        assert_nil UserSession.find
+      end    
+    end
+  end
+    
 end
