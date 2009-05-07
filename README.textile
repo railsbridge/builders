@@ -1,0 +1,7 @@
+h1. Want to contribute?
+
+Send a message to hardbap to be added as a collaborator.
+
+h1. Got a feature request or find a bug?
+
+Please open an "Issue":http://github.com/railsbridge/builders/issues
