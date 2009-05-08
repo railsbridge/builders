@@ -1,5 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :users, :as => :volunteers
+  map.join '/join', :controller => 'users', 
+                        :action => 'new'                      
   
   map.resource :user_session, :only => [:new, :create, :destroy]
   
@@ -7,6 +9,8 @@ ActionController::Routing::Routes.draw do |map|
   map.logout '/logout', :controller => 'user_sessions', 
                         :action => 'destroy', 
                         :conditions => { :method => :delete }
+                        
+  map.root :login                      
   
     
   #map.connect ':controller/:action/:id'

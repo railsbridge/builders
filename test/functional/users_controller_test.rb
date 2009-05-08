@@ -17,14 +17,28 @@ class UsersControllerTest < ActionController::TestCase
   end
  
   context 'POST to create' do
-    setup do
-      post :create, :user => Factory.attributes_for(:user)
-      @user = User.last
+    context "with valid attributes" do
+      setup do
+        post :create, :user => Factory.attributes_for(:user)
+        @user = User.last
+      end
+    
+      should_change 'User.count', :by => 1
+      should_set_the_flash_to /created/i
+      should_redirect_to('user show') {user_path(@user)}
+      should_filter_params :password, :password_confirmation
     end
     
-    should_change 'User.count', :by => 1
-    should_set_the_flash_to /created/i
-    should_redirect_to('user show') {user_path(@user)}
+    context "with invalid attributes" do
+      setup do
+         post :create, :user => Factory.attributes_for(:user, :password => 'bad')
+      end
+
+      should_not_change 'User.count'
+      should_not_set_the_flash
+      should_render_template :new
+      should_filter_params :password, :password_confirmation
+    end       
   end
  
   context 'GET to show' do

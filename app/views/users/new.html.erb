@@ -1,8 +1,19 @@
-<h1>New user</h1>
+<h1>Sign up</h1>
+
  
 <% form_for(@user) do |form| %>
-  <%= render :partial => 'form', :locals => {:form => form} -%>
-  <p><%= form.submit 'Create' -%></p>
+
+    <%= form.error_messages %> 
+
+    <dt><%= form.label :email -%></dt>
+    <dd><%= form.text_field :email -%></dd> 
+    <dt><%= form.label :name -%></dt>
+    <dd><%= form.text_field :name -%></dd>
+    <dt><%= form.label :password -%></dt>
+    <dd><%= form.text_field :password -%></dd>
+    <dt><%= form.label :password_confirmation -%></dt>
+    <dd><%= form.text_field :password_confirmation -%></dd> 
+  
+  
+    <p><%= form.submit 'Sign up' -%></p>
 <% end %>
- 
-<p><%= link_to 'Back', :back -%></p>
