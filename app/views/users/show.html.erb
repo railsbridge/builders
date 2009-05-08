@@ -1,20 +1,7 @@
-<dl>
-  <dt>Email</dt>
-  <dd><%= h @user.email -%></dd>
-  <dt>Name</dt>
-  <dd><%= h @user.name -%></dd>
-  <dt>Availability starts</dt>
-  <dd><%= h @user.availability_starts -%></dd>
-  <dt>Availability ends</dt>
-  <dd><%= h @user.availability_ends -%></dd>
-  <dt>Hours per week</dt>
-  <dd><%= h @user.hours_per_week -%></dd>
-  <dt>Notes</dt>
-  <dd><%= h @user.notes -%></dd>
-</dl>
- 
+<h2>Welcome <%= h(@user_name) -%></h2> 
 <p>
-  <%= link_to 'Edit', edit_user_path(@user) -%>
-  |
-  <%= link_to 'Back', :back -%>
+   I'm available to work on projects from <%= @user.availability_starts -%> through <%= @user.availability_ends -%> for <%= @user.hours_per_week %> hours per week.
+</p> 
+<p>
+  <%= link_to 'Change my profile', edit_user_path(@user) -%>
 </p>
