@@ -1,6 +1,6 @@
 <h2>Welcome <%= h(@user.name) -%></h2> 
 <p>
-   I'm available to work on projects from <%= @user.availability_starts -%> through <%= @user.availability_ends -%> for <%= @user.hours_per_week %> hours per week.
+   I'm available to work on projects from <%= @user.availability_starts -%> through <%= @user.availability_ends -%> for <%= pluralize(@user.hours_per_week, 'hour') -%> per week.
 </p>
 <p>
     <%= render :partial => 'skill', :collection => @user.skill_list -%>
