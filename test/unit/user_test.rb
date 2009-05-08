@@ -15,5 +15,6 @@ class UserTest < ActiveSupport::TestCase
   should_have_db_column :perishable_token, :type => "string"
     
   should_be_authentic
-   
+  
+  should_validate_presence_of :name
 end
