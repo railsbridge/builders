@@ -9,7 +9,7 @@
   <dt><%= form.label :availability_ends -%></dt>
   <dd><%= form.date_select :availability_ends -%></dd>
   <dt><%= form.label :hours_per_week -%></dt>
-  <dd><%= form.text_field :hours_per_week -%></dd>
-  <dt><%= form.label :notes -%></dt>
+  <dd><%= form.select :hours_per_week, 1..10 -%></dd>
+  <dt><%= form.label :notes, 'Tell us a little something about yourself' -%></dt>
   <dd><%= form.text_area :notes -%></dd>
 </dl>
