@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :users, :as => :volunteers
-  map.join '/join', :controller => 'users', 
+  map.signup '/signup', :controller => 'users', 
                         :action => 'new'                      
   
   map.resource :user_session, :only => [:new, :create, :destroy]
