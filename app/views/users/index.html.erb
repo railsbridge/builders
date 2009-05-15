@@ -18,11 +18,6 @@
     <td><%= h user.availability_ends %></td>
     <td><%= h user.hours_per_week %></td>
     <td><%= h user.notes %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) -%></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete -%></td>
   </tr>
   <% end %>
 </table>
- 
-<p><%= link_to 'New user', new_user_path -%></p>
