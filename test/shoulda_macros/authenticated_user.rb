@@ -1,5 +1,5 @@
 def authenticated_user(&blk)
-  context "an authenticated user" do
+  context "as an authenticated user" do
     setup do
       @user = Factory(:user)
       activate_authlogic

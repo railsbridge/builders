@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_filter :require_user, :only => :edit
+  before_filter :require_owner, :only => :edit
+  
   def index
     @users = User.all
     
@@ -62,4 +65,11 @@ class UsersController < ApplicationController
       format.html { redirect_to(users_url) }
     end
   end
+  
+  private
+  
+  def require_owner
+    redirect_to current_user unless current_user.id == params[:id].to_i
+  end
+  
 end

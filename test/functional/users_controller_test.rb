@@ -53,15 +53,30 @@ class UsersControllerTest < ActionController::TestCase
   end
  
   context 'GET to edit' do
-    setup do
-      @user = Factory(:user)
-      get :edit, :id => @user.to_param
+    context "when not logged in" do
+      setup { get :edit, :id => 1 }
+
+      should_redirect_to('login page') { login_path }
     end
     
-    should_respond_with :success
-    should_render_template :edit
-    should_assign_to :user
-  end
+    authenticated_user do
+      setup { get :edit, :id => @user.to_param }
+          
+      should_respond_with :success
+      should_render_template :edit
+      should_assign_to :user
+      
+      
+      context "attempting to edit another user's profile" do
+        setup do 
+          @some_user = Factory(:user)
+          get :edit, :id => @some_user.to_param
+        end
+
+        should_redirect_to("user's profile page") { @user }
+      end        
+    end    
+  end  
  
   context 'PUT to update' do
     setup do
