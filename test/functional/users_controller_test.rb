@@ -86,16 +86,5 @@ class UsersControllerTest < ActionController::TestCase
       should_redirect_to('user show') {user_path(@user)}         
     end
   end
-  
-  context 'given a user exists' do
-    setup { @user = Factory(:user) }
-
-    context 'DELETE to destroy' do
-      setup { delete :destroy, :id => @user.to_param }
-      
-      should_change 'User.count', :from => 1, :to => 0
-      should_set_the_flash_to /deleted/i
-      should_redirect_to('user index') { users_path }
-    end
-  end  
+   
 end

@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :users, :as => :volunteers
+  map.resources :users, :as => :volunteers, :except => :destroy
   map.signup '/signup', :controller => 'users', 
                         :action => 'new'                      
   
