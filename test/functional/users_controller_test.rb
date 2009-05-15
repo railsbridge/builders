@@ -79,13 +79,12 @@ class UsersControllerTest < ActionController::TestCase
   end  
  
   context 'PUT to update' do
-    setup do
-      @user = Factory(:user)
-      put :update, :id => @user.to_param, :user => Factory.attributes_for(:user)
+    authenticated_user do      
+      setup { put :update, :id => @user.to_param, :user => Factory.attributes_for(:user) }
+                             
+      should_set_the_flash_to /updated/i
+      should_redirect_to('user show') {user_path(@user)}         
     end
-    
-    should_set_the_flash_to /updated/i
-    should_redirect_to('user show') {user_path(@user)}
   end
   
   context 'given a user exists' do
