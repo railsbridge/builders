@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
   validates_presence_of :name
   
   is_taggable :skills
+  
+  attr_protected :admin
 end

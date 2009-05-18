@@ -13,10 +13,13 @@ class UserTest < ActiveSupport::TestCase
   should_have_db_column :notes, :type => "text"
   should_have_db_column :single_access_token, :type => "string"
   should_have_db_column :perishable_token, :type => "string"
+  should_have_db_column :admin, :type => "boolean"
     
   should_be_authentic
   
   should_validate_presence_of :name
   
-  should_be_taggable :skills
+  should_be_taggable :skills 
+  
+  should_not_allow_mass_assignment_of :admin
 end

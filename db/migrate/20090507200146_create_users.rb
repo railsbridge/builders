@@ -13,7 +13,7 @@ class CreateUsers < ActiveRecord::Migration
       t.date :availability_ends
       t.integer :hours_per_week
       t.text :notes
-
+      t.boolean :admin, :default => false
       t.timestamps
     end
     
