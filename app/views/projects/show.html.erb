@@ -1,0 +1,24 @@
+<dl>
+  <dt>Org name</dt>
+  <dd><%= h @project.org_name -%></dd>
+  <dt>Org details</dt>
+  <dd><%= h @project.org_details -%></dd>
+  <dt>Contact name</dt>
+  <dd><%= h @project.contact_name -%></dd>
+  <dt>Contact phone</dt>
+  <dd><%= h @project.contact_phone -%></dd>
+  <dt>Contact email</dt>
+  <dd><%= h @project.contact_email -%></dd>
+  <dt>Website</dt>
+  <dd><%= h @project.website -%></dd>
+  <dt>Description</dt>
+  <dd><%= h @project.description -%></dd>
+  <dt>Approved</dt>
+  <dd><%= h @project.approved -%></dd>
+</dl>
+ 
+<p>
+  <%= link_to 'Edit', edit_project_path(@project) -%>
+  |
+  <%= link_to 'Back', :back -%>
+</p>

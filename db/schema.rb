@@ -9,7 +9,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090508194452) do
+ActiveRecord::Schema.define(:version => 20090518205641) do
+
+  create_table "projects", :force => true do |t|
+    t.string   "org_name"
+    t.text     "org_details"
+    t.string   "contact_name"
+    t.string   "contact_phone"
+    t.string   "contact_email"
+    t.string   "website"
+    t.text     "description"
+    t.boolean  "approved"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "taggings", :force => true do |t|
     t.integer "tag_id"

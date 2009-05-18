@@ -1,0 +1,20 @@
+<%= form.error_messages %>
+ 
+<dl>
+  <dt><%= form.label :org_name -%></dt>
+  <dd><%= form.text_field :org_name -%></dd>
+  <dt><%= form.label :org_details -%></dt>
+  <dd><%= form.text_area :org_details -%></dd>
+  <dt><%= form.label :contact_name -%></dt>
+  <dd><%= form.text_field :contact_name -%></dd>
+  <dt><%= form.label :contact_phone -%></dt>
+  <dd><%= form.text_field :contact_phone -%></dd>
+  <dt><%= form.label :contact_email -%></dt>
+  <dd><%= form.text_field :contact_email -%></dd>
+  <dt><%= form.label :website -%></dt>
+  <dd><%= form.text_field :website -%></dd>
+  <dt><%= form.label :description -%></dt>
+  <dd><%= form.text_area :description -%></dd>
+  <dt><%= form.label :approved -%></dt>
+  <dd><%= form.check_box :approved -%></dd>
+</dl>
