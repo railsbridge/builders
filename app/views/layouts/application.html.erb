@@ -12,15 +12,15 @@
     <div id="header">
       <h1>Builders <em>::</em> <span>RailsBridge.org</span></h1>
       <div class="nav clearfix">  
+        <ul>
+          <li class="projects">
+            <%= link_to 'projects', projects_path -%>
+          </li>
+          <li class="users">
+            <%= link_to 'volunteers', users_path -%>
+          </li>
+        </ul>
         <% if logged_in? %>
-          <ul>
-            <li class="projects">
-              <%= link_to 'projects', projects_path -%>
-            </li>
-            <li class="users">
-              <%= link_to 'volunteers', users_path -%>
-            </li>
-          </ul>
           <ul class="user">
             <li>
               <a href="#profile">
