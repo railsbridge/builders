@@ -319,6 +319,35 @@ a:active {
 	white-space: pre;
 }
 
+#footer {
+	text-align: center;
+  padding: 0 0 20px 0;
+}
+
+#footer ul {
+  font-size: 1.2em;
+  line-height: 1.833;
+}
+
+#footer ul li {
+  display: inline;
+  margin: 0 .25em;
+}
+
+#footer a {
+	color: #F33;
+  display: inline;
+	background: #300;
+	padding: .5em .75em;
+	-moz-border-radius: .9em;
+}
+
+#footer a:hover {
+  color: #F66;
+  background: #200;
+  text-decoration: none;
+}
+
 /* [4]:forms */
 
 .users_new #content,
