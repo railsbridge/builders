@@ -403,8 +403,14 @@ form#new_user_session .submit_field input {
 	font-size: 1.6em;
 	background: #C00;
   margin: .5em 0 0 0;
-	border: 10px solid #800;
+	border: 5px outset #800;
   font-family: Georgia, Times, serif;
+}
+
+form#new_user .submit_field input:focus,
+form#new_user_session .submit_field input:focus {
+  background: #900;
+	border: 5px inset #500;
 }
 
 #errorExplanation h2,
