@@ -1,9 +1,19 @@
-<p>
-   I'm available to work on projects from <%= @user.availability_starts -%> through <%= @user.availability_ends -%> for <%= pluralize(@user.hours_per_week, 'hour') -%> per week.
-</p>
-<p>
+<ul class="actions clearfix">
+  <li>
+    <%= link_to 'edit profile', edit_user_path(@user) -%>
+  </li>
+</ul>
+<h2 class="profile_name">
+  <%= h(current_user.name) -%>
+</h2>
+<div class="profile">
+  <p>
+     I&rsquo;m available to work on projects from <%= @user.availability_starts -%> through <%= @user.availability_ends -%> for <%= pluralize(@user.hours_per_week, 'hour') -%> per week.
+  </p>
+  <p>
+    <%= @user.notes -%>
+  </p>
+  <p class="skills">
     <%= render :partial => 'skill', :collection => @user.skill_list -%>
-</p> 
-<p>
-  <%= link_to 'Change my profile', edit_user_path(@user) -%>
-</p>
+  </p> 
+</div>

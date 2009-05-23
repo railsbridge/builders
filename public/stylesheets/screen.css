@@ -230,14 +230,6 @@ a:active {
   background: #A00;
 }
 
-#content {
-	width: 960px;
-  padding: 20px 40px;
-	margin: 50px auto;
-	background: #FFF;
-	border: 1em solid #300;
-}
-
 /* navigation states */
 
 .users_new #header .nav ul li.signup a,
@@ -245,6 +237,86 @@ a:active {
 .users_index #header .nav ul li.users a,
 .projects_index #header .nav ul li.projects a {
   background: #800;
+}
+
+#content {
+	max-width: 960px;
+	background: #FFF;
+	margin: 20px auto;
+	border: 1em solid #300;
+}
+
+#content .actions {
+  margin: 0;
+  float: right;
+  font-size: 1.2em;
+  line-height: 1.833;	
+  list-style-type: none;
+}
+
+#content .actions li {
+	float: left;
+}
+
+#content .actions li a {
+  float: left;  
+  color: #FFF;
+  padding: .5em 1em;
+	background: #600;
+}
+
+#content .actions li a:hover {
+  background: #300;
+  text-decoration: none;
+}
+
+#content h2.profile_name {
+  margin: 0;
+  float: left;
+	font-size: 2.4em;
+  line-height: 2.75;
+  padding: 0 0 0 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#content .profile {
+  clear: both;
+	padding: 0 20px;
+}
+
+#content .profile p {
+	margin: 0 0 1.375em 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#content .profile .skills span {
+  color: #900;
+  background: #EEE;	
+  font-style: italic;
+  margin: 0 .75em 0 0;
+  padding: .25em .5em;
+  border: .25em solid #EEE;
+}
+
+#content .users {
+	padding: 20px;
+}
+
+#content .users table th {
+	white-space: pre;
+}
+
+#content .users table td.name {
+	width: 125px;
+}
+
+#content .projects {
+  clear: both;
+	padding: 20px;
+}
+
+#content .projects  th {
+	white-space: pre;
 }
 
 /* [4]:forms */

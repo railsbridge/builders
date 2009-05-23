@@ -1,21 +1,23 @@
-<table>
-  <tr>
-    <th>Email</th>
-    <th>Name</th>
-    <th>Availability starts</th>
-    <th>Availability ends</th>
-    <th>Hours per week</th>
-    <th>Notes</th>
-  </tr>
- 
-  <% @users.each do |user| %>
-  <tr>
-    <td><%= h user.email %></td>
-    <td><%= h user.name %></td>
-    <td><%= h user.availability_starts %></td>
-    <td><%= h user.availability_ends %></td>
-    <td><%= h user.hours_per_week %></td>
-    <td><%= h user.notes %></td>
-  </tr>
-  <% end %>
-</table>
+<div class="users">
+  <table>
+    <tr>
+      <th>Email</th>
+      <th>Name</th>
+      <th>Availability starts</th>
+      <th>Availability ends</th>
+      <th>Hours per week</th>
+      <th>Notes</th>
+    </tr>
+   
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= h user.email %></td>
+      <td class="name"><%= h user.name %></td>
+      <td><%= h user.availability_starts %></td>
+      <td><%= h user.availability_ends %></td>
+      <td><%= h user.hours_per_week %></td>
+      <td><%= h user.notes %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
