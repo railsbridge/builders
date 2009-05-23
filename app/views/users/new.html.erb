@@ -1,19 +1,22 @@
-<h1>Sign up</h1>
-
- 
 <% form_for(@user) do |form| %>
-
-    <%= form.error_messages %> 
-
-    <dt><%= form.label :email -%></dt>
-    <dd><%= form.text_field :email -%></dd> 
-    <dt><%= form.label :name -%></dt>
-    <dd><%= form.text_field :name -%></dd>
-    <dt><%= form.label :password -%></dt>
-    <dd><%= form.password_field :password -%></dd>
-    <dt><%= form.label :password_confirmation -%></dt>
-    <dd><%= form.password_field :password_confirmation -%></dd> 
-  
-  
-    <p><%= form.submit 'Sign up' -%></p>
+  <%= form.error_messages %>
+  <div class="text_field">
+    <%= form.label :name -%>
+    <%= form.text_field :name -%>
+  </div>
+  <div class="text_field">
+    <%= form.label :email -%>
+    <%= form.text_field :email -%>
+  </div>
+  <div class="password_field">
+    <%= form.label :password -%>
+    <%= form.password_field :password -%>
+  </div>
+  <div class="password_field">
+    <%= form.label :password_confirmation -%>
+    <%= form.password_field :password_confirmation -%>
+  </div>
+  <div class="submit_field">
+    <%= form.submit 'JOIN' -%>
+  </div>
 <% end %>

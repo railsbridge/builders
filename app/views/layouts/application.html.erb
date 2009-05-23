@@ -8,32 +8,42 @@
       <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
     <![endif]-->
   </head>
-  <body>    
-    <div id="container">
-      <div class="span-24">
-        <h2>Welcome <%= h(current_user.name) if logged_in? -%></h2>
-      </div>
-      <div class="span-16">
-        <%= yield -%>
-      </div>
-      <div class="span-8 last">
+  <body class="<%= body_class %>">   
+    <div id="header">
+      <div class="nav clearfix">  
         <% if logged_in? %>
-          <%= link_to('Logout', logout_path, :method => :delete) -%>
-        <% else %>
           <ul>
             <li>
-              <%= link_to('Join', signup_path) -%> 
+              <%= link_to('add a project', new_project_path) -%>
             </li>
+          </ul>
+          <ul class="user">
             <li>
-              <%= link_to('Login', login_path) -%>
+              <a href="#profile">
+                <%= h(current_user.name) -%>
+              </a>
             </li>
-            <li>
-              <%= link_to('Add a Project', new_project_path) -%>
+            <li class="logout">
+              <%= link_to('logout', logout_path, :method => :delete) -%>
+            </li>
+          </ul>      
+        <% else %>
+          <ul class="user">
+            <li class="signup">
+              <%= link_to('join', signup_path) -%> 
+            </li>
+            <li class="login">
+              <%= link_to('login', login_path) -%>
             </li>
           </ul>            
         <% end %>
-      </div>
+      </div><!-- .nav -->
+    </div><!-- #header -->  
+
+    <div id="content">
+      <%= yield -%>
     </div>
+
     <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js',
                                'http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/jquery-ui.min.js',
                                'application' -%> 
