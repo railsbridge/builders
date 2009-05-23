@@ -10,17 +10,21 @@
   </head>
   <body class="<%= body_class %>">   
     <div id="header">
+      <h1>Builders <em>::</em> <span>RailsBridge.org</span></h1>
       <div class="nav clearfix">  
         <% if logged_in? %>
           <ul>
-            <li>
-              <%= link_to('add a project', new_project_path) -%>
+            <li class="projects">
+              <%= link_to 'projects', projects_path -%>
+            </li>
+            <li class="users">
+              <%= link_to 'volunteers', users_path -%>
             </li>
           </ul>
           <ul class="user">
             <li>
               <a href="#profile">
-                <%= h(current_user.name) -%>
+                <%= link_to h(current_user.name), user_path(current_user) %>
               </a>
             </li>
             <li class="logout">

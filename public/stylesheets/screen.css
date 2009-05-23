@@ -60,6 +60,7 @@ table {
 
 body {
   color: #111;
+  background: #500;
 	font-size: .625em;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
@@ -154,6 +155,13 @@ dd {
   margin: 0 1.375em;
 }
 
+th, td {
+  font-size: 1.2em;
+  line-height: 1.833;	
+  text-align: left;
+  padding: 0 1.5em 0 0;
+}
+
 a {
   color: #03E;
 	text-decoration: none;
@@ -166,6 +174,31 @@ a:active {
 }
 
 /* [3]:layout */
+
+#header {
+	background: #FDB;
+}
+
+#header h1 {
+  color: #600;
+	font-size: 2.4em;
+  padding: 0 .458em;
+  font-weight: bold;
+  line-height: 1.833;
+  font-family: georgia;
+}
+
+#header h1 em {
+	color: #C00;
+  font-style: normal;
+}
+
+#header h1 span {
+	color: #FA7;
+  font-weight: normal;
+	font-variant: small-caps;
+	text-transform: lowercase;
+}
 
 #header .nav {
 	background: #C00;
@@ -197,19 +230,34 @@ a:active {
   background: #A00;
 }
 
+#content {
+	width: 960px;
+  padding: 20px 40px;
+	margin: 50px auto;
+	background: #FFF;
+	border: 1em solid #300;
+}
+
 /* navigation states */
 
 .users_new #header .nav ul li.signup a,
-.user_sessions_new #header .nav ul li.login a {
+.user_sessions_new #header .nav ul li.login a,
+.users_index #header .nav ul li.users a,
+.projects_index #header .nav ul li.projects a {
   background: #800;
 }
 
 /* [4]:forms */
 
-form#new_user,
-form#new_user_session {
+.users_new #content,
+.users_create #content,
+.user_sessions_new #content,
+.user_sessions_create #content {
 	width: 400px;
+  padding: 20px 40px;
 	margin: 5em auto;
+  background: #FFF;
+  border: 1em solid #300;
 }
 
 form#new_user label,
@@ -258,21 +306,19 @@ form#new_user_session .submit_field input {
   font-family: Georgia, Times, serif;
 }
 
-form#new_user #errorExplanation h2,
-form#new_user #errorExplanation p {
+#errorExplanation h2,
+#errorExplanation p {
 	display: none;
 }
 
-form#new_user #errorExplanation ul {
+#errorExplanation ul {
   font-size: 1.2em;
   line-height: 1.833;	
 }
 
-form#new_user .text_field .fieldWithErrors,
-form#new_user .password_field .fieldWithErrors {
+.fieldWithErrors {
   color: #F00;
 }
-
 
 /* [x]:clearfix */
 
