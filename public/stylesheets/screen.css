@@ -89,6 +89,12 @@ h2 {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
+.projects_index h2 {
+	float: left;
+	padding: 20px 0 0 20px;
+}
+
+
 /*
   .users h2{
     border-bottom: 5px solid #C33;
@@ -356,22 +362,27 @@ a:active {
 	text-decoration: none;
 }
 
-#content .users ul {
+#content .users ul,
+#content .projects ul {
 	font-size: 1em;
 }
 
-#content .users ul li {
+#content .users ul li,
+#content .projects ul li {
 	clear: left;
   padding: 10px;
   list-style-type: none;
 }
 
-#content .users ul li.odd {
+#content .users ul li.odd,
+#content .projects ul li.odd {
   border-top: 5px solid #DDD;
 }
 
 #content .users ul li strong,
-#content .users ul li span {
+#content .users ul li span,
+#content .projects ul li strong,
+#content .projects ul li span {
 	display: block;
 }
 
@@ -384,7 +395,8 @@ a:active {
 	font-weight: bold;
 }
 
-#content .users ul li .info {
+#content .users ul li .info,
+#content .projects ul li .info {
   float: left;
   width: 230px;
 	font-size: 1.6em;
@@ -394,7 +406,19 @@ a:active {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-#content .users ul li .notes {
+#content .projects ul li .info ul {
+	margin: 0;
+  padding: 0;
+}
+
+#content .projects ul li .info ul li {
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+
+#content .users ul li .notes,
+#content .projects ul li .notes {
   float: left;  
   width: 650px;	
   font-size: 1.2em;
@@ -415,8 +439,8 @@ a:active {
 	padding: 20px;
 }
 
-#content .projects th {
-	white-space: pre;
+.projects_index #content .projects {
+	padding: 0 20px 20px 20px;
 }
 
 #page #extra h2 {
@@ -452,6 +476,7 @@ a:active {
 #footer ul li {
   display: inline;
   margin: 0 .25em;
+  font-weight: bold;
 }
 
 #footer a {

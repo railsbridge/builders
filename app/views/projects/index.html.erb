@@ -4,33 +4,39 @@
   </li> 
 </ul>
 
+<h2>Projects</h2>
+
 <div class="projects">
-  <table>
-    <tr>
-      <th>Org name</th>
-      <th>Org details</th>
-      <th>Contact name</th>
-      <th>Contact phone</th>
-      <th>Contact email</th>
-      <th>Website</th>
-      <th>Description</th>
-      <th>Approved</th>
-    </tr>
-   
+  <ul class="clearfix">
     <% @projects.each do |project| %>
-      <tr>
-        <td><%= h project.org_name %></td>
-        <td><%= h project.org_details %></td>
-        <td><%= h project.contact_name %></td>
-        <td><%= h project.contact_phone %></td>
-        <td><%= h project.contact_email %></td>
-        <td><%= h project.website %></td>
-        <td><%= h project.description %></td>
-        <td><%= h project.approved %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) -%></td>
-        <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete -%></td>
-      </tr>
-    <% end %>
-  </table>
+      <li class="clearfix <%= cycle('even', 'odd', :name => 'row') %>">
+        <div class="info">
+          <strong>
+            <%= link_to (h project.org_name), project %>
+          </strong>
+          <span>
+            <a href="#external_url"><%= h project.website %></a>
+          </span>
+          <ul class="project_actions">
+            <li>
+              <%= link_to 'edit', edit_project_path(project) -%>
+            </li>
+            <li>
+              <%= link_to 'delete', project, :confirm => 'Are you sure?', :method => :delete -%>
+            </li>
+          </ul>
+        </div>
+        <div class="notes">
+          <%= h project.description %>
+        </div>
+      </li>
+<!--
+        <%= h project.org_details %>
+        <%= h project.contact_name %>
+        <%= h project.contact_phone %>
+        <%= h project.contact_email %>
+        <%= h project.approved %>
+-->    <% end %>
+  </ul>
 </div>
+
