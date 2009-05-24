@@ -1,16 +1,30 @@
+<p class="instructions">
+  Required fields are <strong>bold</strong>.
+</p>
+
 <%= form.error_messages %>
- 
-<dl>
-  <dt><%= form.label :name -%></dt>
-  <dd><%= form.text_field :name -%></dd>
-  <dt><%= form.label :availability_starts -%></dt>
-  <dd><%= form.date_select :availability_starts -%></dd>
-  <dt><%= form.label :availability_ends -%></dt>
-  <dd><%= form.date_select :availability_ends -%></dd>
-  <dt><%= form.label :hours_per_week -%></dt>
-  <dd><%= form.select :hours_per_week, 1..10 -%></dd>
-  <dt><%= form.label :skill_list, 'Skill list (Please separate with a comma)'-%></dt>
-  <dd><%= form.text_field :skill_list -%></dd>
-  <dt><%= form.label :notes, 'Tell us a little something about yourself' -%></dt>
-  <dd><%= form.text_area :notes -%></dd>
-</dl>
+
+<div class="text_field">
+  <%= form.label :name, 'Name', :class => 'required' -%>
+  <%= form.text_field :name -%>
+</div>
+<div class="select_field">
+  <%= form.label :availability_starts -%>
+  <%= form.date_select :availability_starts -%>
+</div>
+<div class="select_field">
+  <%= form.label :availability_ends -%>
+  <%= form.date_select :availability_ends -%>
+</div>
+<div class="select_field">
+  <%= form.label :hours_per_week -%>
+  <%= form.select :hours_per_week, 1..10 -%>
+</div>
+<div class="text_field">
+  <%= form.label :skill_list, 'Skill list (Please separate with a comma)'-%>
+  <%= form.text_field :skill_list -%>
+</div>
+<div class="textarea_field">
+  <%= form.label :notes, 'Tell us a little something about yourself' -%>
+  <%= form.text_area :notes -%>
+</div>

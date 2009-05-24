@@ -81,6 +81,13 @@ h2 {
   margin: 0 0 .611em 0;
 }
 
+.projects h2,
+.profile h2 {
+	font-size: 2.4em;
+  line-height: .917;	
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
 h3 {
 	font-size: 2.4em;
   line-height: 2.75;
@@ -185,7 +192,7 @@ a:active {
   padding: 0 .458em;
   font-weight: bold;
   line-height: 1.833;
-  font-family: georgia;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 #header h1 em {
@@ -216,7 +223,7 @@ a:active {
 
 #header .nav ul li {
 	display: inline;
-	font-family: georgia;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 #header .nav ul li a {
@@ -249,7 +256,9 @@ a:active {
 .projects_new #content,
 .projects_create #content,
 .projects_edit #content,
-.projects_update #content {
+.projects_update #content,
+.users_edit #content,
+.users_update #content {
 	width: 640px;
 }
 
@@ -317,7 +326,8 @@ a:active {
 	width: 125px;
 }
 
-#content .projects {
+#content .projects,
+#content .profile {
   clear: both;
 	padding: 20px;
 }
@@ -330,7 +340,7 @@ a:active {
   color: #333;
 	font-size: 2.4em;
   line-height: 1.833;
-  font-family: Georgia;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 #page #extra h2 a {
@@ -442,7 +452,8 @@ form#new_user_session label {
 }
 
 form.new_project label,
-form.edit_project label {
+form.edit_project label,
+form.edit_user label {
   display: block;
   font-size: 1.2em;
   line-height: 1.833;	
@@ -460,7 +471,10 @@ form#new_user_session .checkbox_field,
 form.new_project .text_field,
 form.new_project .textarea_field,
 form.edit_project .text_field,
-form.edit_project .textarea_field {
+form.edit_project .textarea_field,
+form.edit_user .text_field,
+form.edit_user .textarea_field,
+form.edit_user .select_field {
 	margin: 0 0 1em 0;
 }
 
@@ -469,23 +483,26 @@ form#new_user .password_field input,
 form#new_user_session .text_field input,
 form#new_user_session .password_field input,
 form.new_project .textarea_field textarea,
-form.edit_project .textarea_field textarea {
+form.edit_project .textarea_field textarea,
+form.edit_user .textarea_field textarea {
   width: 100%;
 	font-size: 1.6em;
 	line-height: 1.375;  
-  font-family: georgia;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 form.new_project .text_field input,
-form.edit_project .text_field input {
+form.edit_project .text_field input,
+form.edit_user .text_field input {
   width: 66%;
 	font-size: 1.6em;
 	line-height: 1.375;  
-  font-family: georgia;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 form.new_project .textarea_field textarea,
-form.edit_project .textarea_field textarea {
+form.edit_project .textarea_field textarea,
+form.edit_user .textarea_field textarea {
   height: 200px;
 }
 
@@ -496,7 +513,8 @@ form#new_user_session .checkbox_field label {
 form#new_user .submit_field,
 form#new_user_session .submit_field,
 form.new_project .submit_field,
-form.edit_project .submit_field {
+form.edit_project .submit_field,
+form.edit_user .submit_field {
 	text-align: center;	
 }
 
@@ -509,7 +527,7 @@ form#new_user_session .submit_field input {
 	background: #C00;
   margin: .5em 0 0 0;
 	border: 5px outset #800;
-  font-family: Georgia, Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 form#new_user .submit_field input:focus,
@@ -524,15 +542,11 @@ form#new_user_session .submit_field input:focus {
 }
 
 #errorExplanation ul {
-  font-size: 1.2em;
-  line-height: 1.833;	
-}
-
-.new_project #errorExplanation ul,
-.edit_project #errorExplanation ul {
   color: #FFF;
   background: #C00;
   padding: 1em 3em;
+  font-size: 1.2em;
+  line-height: 1.833;	
   list-style-type: decimal;
 }
 

@@ -1,6 +1,9 @@
-<h2>My profile</h2>
- 
-<% form_for(@user) do |form| %>
-  <%= render :partial => 'form', :locals => {:form => form} -%>
-  <p><%= form.submit 'Update profile' -%></p>
-<% end %>
+<div class="profile">
+  <h2>My profile</h2>   
+  <% form_for(@user) do |form| %>
+    <%= render :partial => 'form', :locals => {:form => form} -%>
+    <div class="submit_field">
+      <%= form.submit 'Update profile' -%>
+    </div>
+  <% end %>
+</div>
