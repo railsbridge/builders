@@ -366,7 +366,6 @@ a:active {
   display: inline;
 	background: #300;
 	padding: .5em .75em;
-	-moz-border-radius: .9em;
 }
 
 #footer a:hover {
