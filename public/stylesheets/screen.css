@@ -176,7 +176,7 @@ a:active {
 /* [3]:layout */
 
 #header {
-	background: #FDB;
+	background: #FFD;
 }
 
 #header h1 {
@@ -387,7 +387,7 @@ a:active {
 	width: 380px;
   padding: 20px;
   margin: 0 10px;
-  background: #FFF;
+  background: #FFD;
   border: 10px solid #300;
 }
 
@@ -399,7 +399,7 @@ a:active {
   float: left;
 	width: 380px;
   margin: 0 10px;
-  background: #FFF;
+  background: #FFD;
   padding: 20px 40px;
   border: 10px solid #300;	
 }
