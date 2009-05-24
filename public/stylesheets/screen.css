@@ -82,11 +82,19 @@ h2 {
 }
 
 .projects h2,
-.profile h2 {
+.profile h2,
+.users h2 {
 	font-size: 2.4em;
   line-height: .917;	
   font-family: Georgia, "Times New Roman", Times, serif;
 }
+
+/*
+  .users h2{
+    border-bottom: 5px solid #C33;
+    padding: 0 0 .25em 0;
+  } 
+*/
 
 h3 {
 	font-size: 2.4em;
@@ -305,7 +313,8 @@ a:active {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-#content .profile .skills span {
+#content .profile .skills span,
+#content .users .skills span {
   color: #900;
   background: #EEE;	
   font-style: italic;
@@ -316,6 +325,80 @@ a:active {
 
 #content .users {
 	padding: 20px;
+}
+
+#content .users p.skills {
+  font-size: 1em;
+  line-height: 2.75;
+}
+
+#content .users ul li p.skills span {
+  font-size: 1em;
+	display: inline;
+}
+
+#content .users p.skills span {
+  padding: 0;
+  border: none;
+  font-weight: bold;
+	font-style: normal;
+  margin: 0 .25em 0 0;
+}
+
+#content .users p.skills span a {
+  color: #900;
+  padding: .5em;
+  background: #EEE;
+}
+
+#content .users p.skills span a:hover {
+	background: #DDD;
+	text-decoration: none;
+}
+
+#content .users ul {
+	font-size: 1em;
+}
+
+#content .users ul li {
+	clear: left;
+  padding: 10px;
+  list-style-type: none;
+}
+
+#content .users ul li.odd {
+  border-top: 5px solid #DDD;
+}
+
+#content .users ul li strong,
+#content .users ul li span {
+	display: block;
+}
+
+#content .users ul li span.range_end,
+#content .users ul li span.range_start {
+}
+
+#content .users ul li span em {
+	font-style: normal;
+	font-weight: bold;
+}
+
+#content .users ul li .info {
+  float: left;
+  width: 230px;
+	font-size: 1.6em;
+	text-align: right;
+	line-height: 1.375;
+  padding: 0 20px 0 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#content .users ul li .notes {
+  float: left;  
+  width: 650px;	
+  font-size: 1.2em;
+  line-height: 1.833;
 }
 
 #content .users table th {

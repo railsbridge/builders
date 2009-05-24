@@ -1,23 +1,41 @@
-<div class="users">
-  <table>
-    <tr>
-      <th>Email</th>
-      <th>Name</th>
-      <th>Availability starts</th>
-      <th>Availability ends</th>
-      <th>Hours per week</th>
-      <th>Notes</th>
-    </tr>
-   
+<div class="users">  
+  <h2>Volunteers</h2>
+
+  <ul class="clearfix">
     <% @users.each do |user| %>
-    <tr>
-      <td><%= h user.email %></td>
-      <td class="name"><%= h user.name %></td>
-      <td><%= h user.availability_starts %></td>
-      <td><%= h user.availability_ends %></td>
-      <td><%= h user.hours_per_week %></td>
-      <td><%= h user.notes %></td>
-    </tr>
+      <li class="clearfix <%= cycle('even', 'odd', :name => 'row') %>">
+        <div class="info">
+          <strong>
+            <a href="#profile">
+              <%= h user.name %>
+            </a>
+          </strong>
+          <strong>
+            <%= h user.hours_per_week %> hours / week
+          </strong>
+          <span class="range_start">
+            <em>from:</em>
+            <%= h user.availability_starts %>
+          </span>
+          <span class="range_end">
+            <em>to:</em>
+            <%= h user.availability_ends %>
+          </span>
+        </div>
+        <div class="notes">
+          <%= h user.notes %>
+          <p class="skills"> 
+            <span><a href="#">css</a></span>
+            <span><a href="#">deployment</a></span>    
+            <span><a href="#">design</a></span>
+            <span><a href="#">html</a></span>
+            <span><a href="#">merb</a></span>    
+            <span><a href="#">ruby</a></span>
+            <span><a href="#">rails</a></span>
+            <span><a href="#">xhtml</a></span>
+          </p> 
+        </div>
+      </li>
     <% end %>
-  </table>
+  </ul>
 </div>
