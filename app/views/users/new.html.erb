@@ -1,3 +1,7 @@
+<% content_for :extra do -%>
+  <%= render :partial => 'shared/blurb' -%>
+<% end -%>
+
 <% form_for(@user) do |form| %>
   <%= form.error_messages %>
   <div class="text_field">

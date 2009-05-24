@@ -44,8 +44,11 @@
       </div><!-- .nav -->
     </div><!-- #header -->  
 
-    <div id="content">
-      <%= yield -%>
+    <div id="page" class="clearfix">
+      <%= yield :extra -%>
+      <div id="content">
+        <%= yield -%>
+      </div>      
     </div>
 
     <div id="footer">

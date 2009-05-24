@@ -315,8 +315,28 @@ a:active {
 	padding: 20px;
 }
 
-#content .projects  th {
+#content .projects th {
 	white-space: pre;
+}
+
+#page #extra h2 {
+  color: #333;
+	font-size: 2.4em;
+  line-height: 1.833;
+  font-family: Georgia;
+}
+
+#page #extra h2 a {
+  color: #900;
+  text-decoration: none;
+}
+
+#page #extra h2 a:hover {
+  border-bottom: 1px solid #900;
+}
+
+#page #extra h2 ins {
+  font-style: italic;
 }
 
 #footer {
@@ -350,15 +370,38 @@ a:active {
 
 /* [4]:forms */
 
+.users_new #page,
+.users_create #page,
+.user_sessions_new #page,
+.user_sessions_create #page {
+	width: 960px;
+	margin: 40px auto;
+}
+
+.users_new #extra,
+.users_create #extra,
+.user_sessions_new #extra,
+.user_sessions_create #extra {
+  margin: 0;
+  float: left;
+	width: 380px;
+  padding: 20px;
+  margin: 0 10px;
+  background: #FFF;
+  border: 10px solid #300;
+}
+
 .users_new #content,
 .users_create #content,
 .user_sessions_new #content,
-.user_sessions_create #content {
-	width: 400px;
-  padding: 20px 40px;
-	margin: 5em auto;
+.user_sessions_create #content{
+  margin: 0;
+  float: left;
+	width: 380px;
+  margin: 0 10px;
   background: #FFF;
-  border: 1em solid #300;
+  padding: 20px 40px;
+  border: 10px solid #300;	
 }
 
 form#new_user label,
