@@ -1,18 +1,41 @@
 <%= form.error_messages %>
- 
-<dl>
-  <dt><%= form.label :org_name -%></dt>
-  <dd><%= form.text_field :org_name -%></dd>
-  <dt><%= form.label :org_details -%></dt>
-  <dd><%= form.text_area :org_details -%></dd>
-  <dt><%= form.label :contact_name -%></dt>
-  <dd><%= form.text_field :contact_name -%></dd>
-  <dt><%= form.label :contact_phone -%></dt>
-  <dd><%= form.text_field :contact_phone -%></dd>
-  <dt><%= form.label :contact_email -%></dt>
-  <dd><%= form.text_field :contact_email -%></dd>
-  <dt><%= form.label :website -%></dt>
-  <dd><%= form.text_field :website -%></dd>
-  <dt><%= form.label :description -%></dt>
-  <dd><%= form.text_area :description -%></dd>
-</dl>
+
+<fieldset>
+  <h3>organization info</h3>
+  <div class="text_field">
+    <%= form.label :org_name, 'Organization name' -%>
+    <%= form.text_field :org_name -%>
+  </div>
+  <div class="textarea_field">
+    <%= form.label :org_details, 'Organization details' -%>
+    <%= form.text_area :org_details -%>
+  </div>
+</fieldset>
+
+<fieldset>
+  <h3>contact info</h3>
+  <div class="text_field">
+    <%= form.label :contact_name -%>
+    <%= form.text_field :contact_name -%>
+  </div>
+  <div class="text_field">
+    <%= form.label :contact_email -%>
+    <%= form.text_field :contact_email -%>
+  </div>
+  <div class="text_field">
+    <%= form.label :contact_phone -%>
+    <%= form.text_field :contact_phone -%>
+  </div>
+</fieldset>
+
+<fieldset>
+  <h3>project info</h3>
+  <div class="textarea_field">
+    <%= form.label :description -%>
+    <%= form.text_area :description -%>
+  </div>
+  <div class="text_field">
+    <%= form.label :website -%>
+    <%= form.text_field :website -%>
+  </div>
+</fieldset>

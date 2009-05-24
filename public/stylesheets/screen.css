@@ -246,6 +246,12 @@ a:active {
 	border: 1em solid #300;
 }
 
+.projects_new #content,
+.projects_create #content,
+.projects_edit #content {
+	width: 640px;
+}
+
 #content .actions {
   margin: 0;
   float: right;
@@ -370,6 +376,24 @@ a:active {
 
 /* [4]:forms */
 
+form fieldset {
+	margin: 0 0 40px 0;
+  padding: 0 0 10px 0;
+}
+
+form fieldset h3 {
+  color: #777;
+	font-size: 1.6em;
+	line-height: 1.375;
+  text-align: center;
+  margin: 0 0 10px 0;
+  font-variant: small-caps;
+  letter-spacing: .171875em;
+  border-top: 1px dashed #999;
+  border-bottom: 1px dashed #999;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
 .users_new #page,
 .users_create #page,
 .user_sessions_new #page,
@@ -405,28 +429,50 @@ a:active {
 }
 
 form#new_user label,
-form#new_user_session label {
+form#new_user_session label,
+form.new_project label,
+form.edit_project label {
   display: block;
 	font-size: 1.6em;
-	line-height: 1.375;
   font-weight: bold;
+	line-height: 1.375;
 }
 
 form#new_user .text_field,
 form#new_user .password_field,
 form#new_user_session .text_field,
 form#new_user_session .password_field,
-form#new_user_session .checkbox_field {
+form#new_user_session .checkbox_field,
+form.new_project .text_field,
+form.new_project .textarea_field,
+form.edit_project .text_field,
+form.edit_project .textarea_field {
 	margin: 0 0 1em 0;
 }
 
 form#new_user .text_field input,
 form#new_user .password_field input,
 form#new_user_session .text_field input,
-form#new_user_session .password_field input {
+form#new_user_session .password_field input,
+form.new_project .textarea_field textarea,
+form.edit_project .textarea_field textarea {
   width: 100%;
 	font-size: 1.6em;
 	line-height: 1.375;  
+  font-family: georgia;
+}
+
+form.new_project .text_field input,
+form.edit_project .text_field input {
+  width: 66%;
+	font-size: 1.6em;
+	line-height: 1.375;  
+  font-family: georgia;
+}
+
+form.new_project .textarea_field textarea,
+form.edit_project .textarea_field textarea {
+  height: 200px;
 }
 
 form#new_user_session .checkbox_field label {
@@ -434,7 +480,9 @@ form#new_user_session .checkbox_field label {
 }
 
 form#new_user .submit_field,
-form#new_user_session .submit_field {
+form#new_user_session .submit_field,
+form.new_project .submit_field,
+form.edit_project .submit_field {
 	text-align: center;	
 }
 

@@ -1,12 +1,10 @@
-<h1>Editing project</h1>
- 
-<% form_for(@project) do |form| %>
-  <%= render :partial => 'form', :locals => {:form => form} -%>
-  <p><%= form.submit 'Update' -%></p>
-<% end %>
- 
-<p>
-  <%= link_to 'Show', @project -%>
-  |
-  <%= link_to 'Back', :back -%>
-</p>
+<div class="projects">
+  <h2>Update project</h2>
+   
+  <% form_for(@project) do |form| %>
+    <%= render :partial => 'form', :locals => {:form => form} -%>
+    <div class="submit_field">
+      <%= form.submit 'Update project' -%>
+    </div>
+  <% end %>
+</div>

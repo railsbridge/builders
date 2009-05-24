@@ -1,8 +1,10 @@
-<h1>New project</h1>
- 
-<% form_for(@project) do |form| %>
-  <%= render :partial => 'form', :locals => {:form => form} -%>
-  <p><%= form.submit 'Create' -%></p>
-<% end %>
- 
-<p><%= link_to 'Back', :back -%></p>
+<div class="projects">
+  <h2>Create project</h2>
+   
+  <% form_for(@project) do |form| %>
+    <%= render :partial => 'form', :locals => {:form => form} -%>
+    <div class="submit_field">
+      <%= form.submit 'Create project' -%>
+    </div>
+  <% end %>
+</div>
