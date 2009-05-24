@@ -1,9 +1,13 @@
+<p class="instructions">
+  Required fields are <strong>bold</strong>.
+</p>
+
 <%= form.error_messages %>
 
 <fieldset>
   <h3>organization info</h3>
   <div class="text_field">
-    <%= form.label :org_name, 'Organization name' -%>
+    <%= form.label :org_name, 'Organization name', :class => 'required' -%>
     <%= form.text_field :org_name -%>
   </div>
   <div class="textarea_field">
@@ -15,11 +19,11 @@
 <fieldset>
   <h3>contact info</h3>
   <div class="text_field">
-    <%= form.label :contact_name -%>
+    <%= form.label :contact_name, 'Contact name', :class => 'required' -%>
     <%= form.text_field :contact_name -%>
   </div>
   <div class="text_field">
-    <%= form.label :contact_email -%>
+    <%= form.label :contact_email, 'Contact email', :class => 'required' -%>
     <%= form.text_field :contact_email -%>
   </div>
   <div class="text_field">

@@ -248,7 +248,8 @@ a:active {
 
 .projects_new #content,
 .projects_create #content,
-.projects_edit #content {
+.projects_edit #content,
+.projects_update #content {
 	width: 640px;
 }
 
@@ -428,14 +429,28 @@ form fieldset h3 {
   border: 10px solid #300;	
 }
 
+form p.instructions {
+  background: #EEE;
+	margin: 0 0 1.375em 0;
+	padding: .6875em;
+}
+
 form#new_user label,
-form#new_user_session label,
+form#new_user_session label {
+  display: block;
+	font-size: 1.6em;
+	line-height: 1.375;
+}
+
 form.new_project label,
 form.edit_project label {
   display: block;
-	font-size: 1.6em;
+  font-size: 1.2em;
+  line-height: 1.833;	
+}
+
+label.required {
   font-weight: bold;
-	line-height: 1.375;
 }
 
 form#new_user .text_field,
@@ -512,6 +527,14 @@ form#new_user_session .submit_field input:focus {
 #errorExplanation ul {
   font-size: 1.2em;
   line-height: 1.833;	
+}
+
+.new_project #errorExplanation ul,
+.edit_project #errorExplanation ul {
+  color: #FFF;
+  background: #C00;
+  padding: 1em 3em;
+  list-style-type: decimal;
 }
 
 .fieldWithErrors {
