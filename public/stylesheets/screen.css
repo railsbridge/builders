@@ -318,6 +318,10 @@ a:active {
 	padding: 20px;
 }
 
+.users_index #content .users {
+  padding: 40px 40px 20px 40px;
+}
+
 #content .profile p {
 	margin: 0 0 1.375em 0;
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -329,20 +333,22 @@ a:active {
   font-size: 1em;
   background: #EEE;
   line-height: 2.75;
-  margin: 0 .5em 0 0;  
   font-weight: bold;
+  margin: 0 .5em 0 0;  
   display: inline !important;
 }
 
 #content .users ul,
 #content .projects ul {
+  margin: 0;
+  padding: 0;
 	font-size: 1em;
 }
 
 #content .users ul li,
 #content .projects ul li {
 	clear: left;
-  padding: 10px;
+  padding: 20px 10px;
   list-style-type: none;
 }
 
@@ -372,15 +378,12 @@ a:active {
 #content .projects ul li .info,
 #content .profile .info {
   float: left;
-  width: 230px;
+  width: 210px;
 	font-size: 1.6em;
 	text-align: right;
 	line-height: 1.375;
   padding: 0 20px 0 0;
   font-family: Georgia, "Times New Roman", Times, serif;
-}
-
-#content .profile .info {
 }
 
 #content .projects ul li .info ul {
@@ -398,7 +401,7 @@ a:active {
 #content .projects ul li .notes,
 #content .profile .notes {
   float: left;  
-  width: 650px;	
+  width: 630px;	
   font-size: 1.2em;
   line-height: 1.833;
 }
@@ -413,6 +416,27 @@ a:active {
   clear: both;
 	padding: 0 20px 20px 20px;
 }
+
+.users .header {
+  padding: 0 0 20px 0;
+ 	border-bottom: 5px solid #DDD;
+}
+
+.users .header .info {
+	margin: 0;
+	float: left;
+	width: 220px;
+	text-align: right;
+	padding: 0 20px 0 0;
+}
+
+.users .header .notes {
+  float: left;  
+  width: 630px;	
+  font-size: 1.2em;
+  line-height: 1.833;
+}
+
 
 #page #extra h2 {
   color: #333;
@@ -622,6 +646,10 @@ form#new_user_session .submit_field input:focus {
 	border: 5px inset #500;
 }
 
+form#sort_users div {
+	display: inline;
+}
+
 #errorExplanation h2,
 #errorExplanation p {
 	display: none;
@@ -651,3 +679,4 @@ form#new_user_session .submit_field input:focus {
 }
 * html .clearfix { height: 1%; }
 *:first-child+html .clearfix { min-height: 1px; }
+
