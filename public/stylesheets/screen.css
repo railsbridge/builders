@@ -523,6 +523,13 @@ form p.instructions {
 	padding: .6875em;
 }
 
+form p.information {
+  color: #333;
+  font-size: 1.2em;
+  line-height: 1.833;	
+	margin: 0 0 .917em 0;
+}
+
 form#new_user label,
 form#new_user_session label {
   display: block;
