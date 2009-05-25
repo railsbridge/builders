@@ -261,7 +261,7 @@ a:active {
 }
 
 #content {
-	max-width: 960px;
+	width: 960px;
 	background: #FFF;
 	margin: 20px auto;
 	border: 1em solid #300;
@@ -314,52 +314,24 @@ a:active {
 	padding: 0 20px;
 }
 
+#content .users {
+	padding: 20px;
+}
+
 #content .profile p {
 	margin: 0 0 1.375em 0;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-#content .profile .skills span,
-#content .users .skills span {
-  color: #900;
-  background: #EEE;	
-  font-style: italic;
-  margin: 0 .75em 0 0;
-  padding: .25em .5em;
-  border: .25em solid #EEE;
-}
-
-#content .users {
-	padding: 20px;
-}
-
-#content .users p.skills {
-  font-size: 1em;
-  line-height: 2.75;
-}
-
-#content .users ul li p.skills span {
-  font-size: 1em;
-	display: inline;
-}
-
-#content .users p.skills span {
-  padding: 0;
-  border: none;
-  font-weight: bold;
-	font-style: normal;
-  margin: 0 .25em 0 0;
-}
-
-#content .users p.skills span a {
+#content .skills span {
   color: #900;
   padding: .5em;
+  font-size: 1em;
   background: #EEE;
-}
-
-#content .users p.skills span a:hover {
-	background: #DDD;
-	text-decoration: none;
+  line-height: 2.75;
+  margin: 0 .5em 0 0;  
+  font-weight: bold;
+  display: inline !important;
 }
 
 #content .users ul,
@@ -390,13 +362,15 @@ a:active {
 #content .users ul li span.range_start {
 }
 
-#content .users ul li span em {
+#content .users ul li span em,
+#content .profile em {
 	font-style: normal;
 	font-weight: bold;
 }
 
 #content .users ul li .info,
-#content .projects ul li .info {
+#content .projects ul li .info,
+#content .profile .info {
   float: left;
   width: 230px;
 	font-size: 1.6em;
@@ -404,6 +378,9 @@ a:active {
 	line-height: 1.375;
   padding: 0 20px 0 0;
   font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#content .profile .info {
 }
 
 #content .projects ul li .info ul {
@@ -418,28 +395,22 @@ a:active {
 }
 
 #content .users ul li .notes,
-#content .projects ul li .notes {
+#content .projects ul li .notes,
+#content .profile .notes {
   float: left;  
   width: 650px;	
   font-size: 1.2em;
   line-height: 1.833;
 }
 
-#content .users table th {
-	white-space: pre;
-}
-
-#content .users table td.name {
-	width: 125px;
-}
-
-#content .projects,
-#content .profile {
+#content .projects {
   clear: both;
 	padding: 20px;
 }
 
-.projects_index #content .projects {
+.projects_index #content .projects,
+#content .profile {
+  clear: both;
 	padding: 0 20px 20px 20px;
 }
 

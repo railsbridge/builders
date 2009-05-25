@@ -23,9 +23,7 @@
         <% if logged_in? %>
           <ul class="user">
             <li>
-              <a href="#profile">
-                <%= link_to 'my profile', user_path(current_user) %>
-              </a>
+              <%= link_to 'my profile', user_path(current_user) %>
             </li>
             <li class="logout">
               <%= link_to('logout', logout_path, :method => :delete) -%>

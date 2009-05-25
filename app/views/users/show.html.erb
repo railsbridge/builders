@@ -3,17 +3,27 @@
     <%= link_to 'edit profile', edit_user_path(@user) -%>
   </li>
 </ul>
+
 <h2 class="profile_name">
   <%= h(current_user.name) -%>
 </h2>
-<div class="profile">
-  <p>
-     I&rsquo;m available to work on projects from <%= @user.availability_starts -%> through <%= @user.availability_ends -%> for <%= pluralize(@user.hours_per_week, 'hour') -%> per week.
-  </p>
-  <p>
-    <%= @user.notes -%>
-  </p>
-  <p class="skills">
+
+<div class="profile clearfix">
+  <div class="info">
+    <div class="hours">
+      <%= pluralize(@user.hours_per_week, 'hour') -%> / week
+    </div>
+    <div>
+      <em>from:</em> <%= @user.availability_starts -%>
+    </div>
+    <div>
+      <em>to:</em> <%= @user.availability_ends -%>
+    </div>
+  </div>
+  <div class="notes">
+    <%= h @user.notes -%>
+  <div class="skills">
     <%= render :partial => 'skill', :collection => @user.skill_list -%>
-  </p> 
+  </div> 
+  </div>
 </div>
