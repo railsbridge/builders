@@ -21,7 +21,7 @@
     </div>
   </div>
   <div class="notes">
-    <%= h @user.notes -%>
+    <%= safe_textilize(@user.notes) -%>
   <div class="skills">
     <%= render :partial => 'skill', :collection => @user.skill_list -%>
   </div> 
