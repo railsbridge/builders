@@ -10,4 +10,7 @@ module UsersHelper
     end
   end
 
+  def allow_profile_edit?(user)
+    current_user == user
+  end
 end

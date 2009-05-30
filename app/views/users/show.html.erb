@@ -1,6 +1,6 @@
 <ul class="actions clearfix">
   <li>
-    <%= link_to 'edit profile', edit_user_path(@user) -%>
+    <%= link_to_if(allow_profile_edit?(@user), 'edit profile', edit_user_path(@user)) {} -%>
   </li>
 </ul>
 

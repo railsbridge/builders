@@ -25,9 +25,7 @@
       <li class="clearfix <%= cycle('even', 'odd', :name => 'row') %>">
         <div class="info">
           <strong>
-            <a href="#profile">
-              <%= h user.name %>
-            </a>
+            <%= link_to(h(user.name), user) %>
           </strong>
           <span>
             <%= h user.hours_per_week %> hours / week
