@@ -14,7 +14,7 @@ ActionController::Routing::Routes.draw do |map|
                         
   map.root :login                      
   
-    
+  map.site 'site/:name', :controller => 'page', :action => 'show'
   #map.connect ':controller/:action/:id'
   #map.connect ':controller/:action/:id.:format'
 end
