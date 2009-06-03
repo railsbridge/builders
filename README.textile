@@ -1,12 +1,18 @@
 h1. Want to contribute?
 
-# add a new Label on "Issues":http://github.com/railsbridge/builders/issues with you GitHub handle
-# add your label to an issue you want to fix (or add a new issue)
+# add a new Label on "Issues":http://github.com/railsbridge/builders/issues with your GitHub handle
+# add your label to an issue you want to work on (or add a new issue)
 # send a message to hardbap to be added as a collaborator
 # if you'd rather fork make sure you send the pull request to hardbap or else it won't been seen
-# make sure your commit message includes the text "Closes #X" where X is the issue you've fixed
+# your commit message should include the text "Closes #X" where X is the issue you're closing
 
-We use "Shoulda":http//github.com/thoughtbot/shoulda , "Factory Girl":http://github.com/thoughtbot/factory_girl , "RR":http://github.com/btakita/rr/tree/master for testing.
+We use "Shoulda":http//github.com/thoughtbot/shoulda , "Factory Girl":http://github.com/thoughtbot/factory_girl and "RR":http://github.com/btakita/rr/tree/master for testing.
+
+Other gems/plugins we use:
+
+* "authlogic":http://github.com/binarylogic/authlogic
+* "is_taggable":http://github.com/giraffesoft/is_taggable
+* "will_paginate":http://github.com/mislav/will_paginate
 
 h1. Got a feature request or find a bug?
 
