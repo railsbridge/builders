@@ -1,6 +1,12 @@
 h1. Want to contribute?
 
-Send a message to hardbap to be added as a collaborator.
+# add a new Label on "Issues":http://github.com/railsbridge/builders/issues with you GitHub handle
+# add your label to an issue you want to fix (or add a new issue)
+# send a message to hardbap to be added as a collaborator
+# if you'd rather fork make sure you send the pull request to hardbap or else it won't been seen
+# make sure your commit message includes the text "Closes #X" where X is the issue you've fixed
+
+We use "Shoulda":http//github.com/thoughtbot/shoulda , "Factory Girl":http://github.com/thoughtbot/factory_girl , "RR":http://github.com/btakita/rr/tree/master for testing.
 
 h1. Got a feature request or find a bug?
 
