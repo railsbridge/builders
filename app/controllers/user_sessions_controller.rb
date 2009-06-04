@@ -1,6 +1,7 @@
 class UserSessionsController < ApplicationController
+  before_filter :need_to_login, :except => :destroy
   before_filter :require_user, :only => :destroy
-  
+
   def new
     @user_session = UserSession.new
   end
@@ -20,5 +21,12 @@ class UserSessionsController < ApplicationController
     current_user_session.destroy
     flash[:success] = "Logout successful!"
     redirect_back_or_default login_path
+  end
+
+  private
+
+  def need_to_login
+    redirect_to(current_user) if logged_in?
+    true
   end
 end

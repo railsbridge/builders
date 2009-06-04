@@ -1,13 +1,22 @@
-require 'test_helper'
+require File.join(File.dirname(__FILE__), '..', 'test_helper')
 
 class UserSessionsControllerTest < ActionController::TestCase
   
   context "on GET to new" do
-    setup { get :new }
+    context 'when not logged in' do
+      setup { get :new }
 
-    should_respond_with :success
-    should_render_template :new
-    should_assign_to(:user_session)
+      should_respond_with :success
+      should_render_template :new
+      should_assign_to(:user_session)
+    end
+
+    authenticated_user do
+      setup { get :new }
+
+      should_redirect_to("User's homepage") { user_path(@user) }
+      should_not_assign_to(:user_session)
+    end
   end
   
   context "on PUT to create" do    
@@ -45,5 +54,4 @@ class UserSessionsControllerTest < ActionController::TestCase
       end    
     end
   end
-    
 end
