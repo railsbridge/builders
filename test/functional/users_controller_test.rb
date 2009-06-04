@@ -25,7 +25,7 @@ class UsersControllerTest < ActionController::TestCase
     
       should_change 'User.count', :by => 1
       should_set_the_flash_to /created/i
-      should_redirect_to('user show') {user_path(@user)}
+      should_redirect_to('user edit') {edit_user_path(@user)}
       should_filter_params :password, :password_confirmation
     end
     
