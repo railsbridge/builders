@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_filter :require_owner, :only => [:edit, :update]
   
   def index
-    @users = User.all
+    @users = User.paginate(:page => params[:page], :per_page => 5)
     
     respond_to do |format|
       format.html      
