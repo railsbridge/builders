@@ -2,4 +2,4 @@
 log/*.log
 tmp/**/*
 db/*.sqlite3
-config/smtp_gmail.yml
+config/smtp_gmail.yml.production
