@@ -22,34 +22,6 @@
   <%= will_paginate @posts %>
 
   <ul class="clearfix">
-    <% @users.each do |user| %>
-      <li class="clearfix <%= cycle('even', 'odd', :name => 'row') %>">
-        <div class="info">
-          <strong>
-            <%= link_to(h(user.name), user) %>
-          </strong>
-          <span>
-            <%= h user.hours_per_week %> hours / week
-          </span>
-          <span class="range_start">
-            <em>from:</em>
-            <%= h user.availability_starts %>
-          </span>
-          <span class="range_end">
-            <em>to:</em>
-            <%= h user.availability_ends %>
-          </span>
-        </div>
-        <div class="notes">
-          <%= safe_textilize(user.notes) %>
-          <div class="skills">
-            <span>html</span>
-            <span>css</span>
-            <span>xhtml</span>
-            <span>design</span>  
-          </div> 
-        </div>
-      </li>
-    <% end %>
+    <%= render @users %>
   </ul>
 </div>
