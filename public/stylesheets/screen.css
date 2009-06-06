@@ -406,6 +406,12 @@ a:active {
   line-height: 1.833;
 }
 
+#content .notes p {
+  font-size: 1em;
+  line-height: 1.833;
+  margin-bottom: 1.833em;
+}
+
 #content .projects {
   clear: both;
 	padding: 20px;
