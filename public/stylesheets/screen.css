@@ -697,3 +697,46 @@ form#sort_users div {
 * html .clearfix { height: 1%; }
 *:first-child+html .clearfix { min-height: 1px; }
 
+.pagination {
+  font-size: 1.2em;
+  line-height: 1.833;
+  float: right;
+  font-weight: 900;
+}
+
+.pagination span,
+.pagination a {
+  color: #F99;
+  background: #C00;
+  padding: .5em 1em;
+  float: left;
+}
+
+.pagination a:hover {
+  color: #FFF;
+  background: #F00;
+  text-decoration: none;
+}
+
+.pagination .current {
+  color: #FFF;
+  background: #900;
+}
+
+.pagination .prev_page {
+  color: #900;
+  background: #300;
+  -moz-border-radius-lefttop: 5px;
+  -moz-border-radius-leftbottom: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-bottom-left-radius: 3px;
+}
+
+.pagination .next_page {
+  color: #900;
+  background: #300;
+  -moz-border-radius-righttop: 5px;
+  -moz-border-radius-rightbottom: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 3px;
+}
