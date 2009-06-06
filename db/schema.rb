@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20090518205641) do
     t.string   "website"
     t.text     "description"
     t.boolean  "approved"
+    t.string   "access_key"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,4 +1,8 @@
 class ProjectsController < ApplicationController
+  verify :params => :access_key, :only => [:edit, :update], 
+                                 :render => {:nothing => true, :status => :unauthorized}
+  before_filter :get_project, :only => [:edit, :update]
+
   def index
     @projects = Project.all
     
@@ -24,7 +28,7 @@ class ProjectsController < ApplicationController
   end
  
   def edit
-    @project = Project.find(params[:id])
+
   end
  
   def create
@@ -41,8 +45,6 @@ class ProjectsController < ApplicationController
   end
  
   def update
-    @project = Project.find(params[:id])
- 
     respond_to do |format|
       if @project.update_attributes(params[:project])
         flash[:success] = 'Project was successfully updated.'
@@ -62,4 +64,12 @@ class ProjectsController < ApplicationController
       format.html { redirect_to(projects_url) }
     end
   end
+end
+
+private
+
+def get_project
+  @project = Project.find_by_id_and_access_key!(params[:id], params[:access_key])
+rescue ActiveRecord::RecordNotFound
+  render(:nothing => true, :status => :not_found) and return false
 end

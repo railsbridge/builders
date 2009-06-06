@@ -2,6 +2,8 @@
   <h2>Update project</h2>
    
   <% form_for(@project) do |form| %>
+    <%= hidden_field_tag(:access_key, @project.access_key) -%>
+    
     <%= render :partial => 'form', :locals => {:form => form} -%>
     <div class="submit_field">
       <%= form.submit 'Update project' -%>

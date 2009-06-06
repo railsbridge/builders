@@ -1,10 +1,10 @@
 Factory.define :project do |factory|
-  factory.org_name 'MyString'
-  factory.org_details 'MyText'
-  factory.contact_name 'MyString'
-  factory.contact_phone 'MyString'
-  factory.contact_email 'MyString'
-  factory.website 'MyString'
-  factory.description 'MyText'
+  factory.org_name "Christian Children's Fund"
+  factory.org_details "An international child sponsorship group based in Richmond, Virginia, United States, that provides assistance to communities in many developing countries, as well as in the United States."
+  factory.contact_name 'Sally Struthers'
+  factory.contact_phone ''
+  factory.contact_email 'sally@christianchildrensfund.org'
+  factory.website 'www.christianchildrensfund.org'
+  factory.description 'We could really use a forum for our web site.'
   factory.approved 'false'
 end
