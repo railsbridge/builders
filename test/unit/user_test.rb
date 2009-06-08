@@ -1,4 +1,4 @@
-require 'test_helper'
+require File.join(File.dirname(__FILE__), '..', 'test_helper')
  
 class UserTest < ActiveSupport::TestCase
   
@@ -22,4 +22,23 @@ class UserTest < ActiveSupport::TestCase
   should_be_taggable :skills 
   
   should_not_allow_mass_assignment_of :admin
+
+  context '#deliver_password_reset_instructions' do
+    setup do 
+      @user = Factory(:user)
+      stub(Notifier, :method_missing)
+      stub(Notifier, :deliver_password_reset_instructions).with(@user)
+    end
+    
+    should 'change #perishable_token' do
+      old_token = @user.perishable_token
+      @user.deliver_password_reset_instructions
+      assert_not_equal old_token, @user.perishable_token
+    end
+
+    should 'send email' do
+      @user.deliver_password_reset_instructions
+      assert_received(Notifier) { |notifier| notifier.deliver_password_reset_instructions(@user) }
+    end
+  end
 end
