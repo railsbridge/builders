@@ -104,9 +104,9 @@ class ProjectsControllerTest < ActionController::TestCase
     context 'DELETE to destroy' do
       setup { delete :destroy, :id => @project.to_param }
       
-      should_change 'Project.count', :from => 1, :to => 0
-      should_set_the_flash_to /deleted/i
-      should_redirect_to('project index') { projects_path }
+      should_eventually "change 'Project.count', :from => 1, :to => 0"
+      should_eventually "set_the_flash_to /deleted/i"
+      should_eventually "redirect_to('project index') { projects_path }"
     end
   end  
 end
