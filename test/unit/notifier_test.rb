@@ -11,11 +11,12 @@ class NotifierTest < ActionMailer::TestCase
     project = Factory(:project)
     assert_equal 1, ActionMailer::Base.deliveries.size
     
-    assert_sent_email do |email|
-      assert_contains email.to, project.contact_email
-      email.subject =~ /thank you for signing up/i
-      email.body =~ /http:\/\/builders.railsbridge.org\/projects\/#{project.id}\/edit\?access_key=#{project.access_key}/
-    end
+    email = ActionMailer::Base.deliveries.first
+    assert_contains email.to, project.contact_email
+    assert_contains email.from, /builders@railsbridge.org/i
+    assert_match /thank you for signing up/i, email.subject
+    assert_match /http:\/\/builders.railsbridge.org\/projects\/#{project.id}\/edit\?access_key=#{project.access_key}/,
+                email.body
   end
 
   def test_password_reset_instructions
