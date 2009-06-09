@@ -36,7 +36,6 @@ class UserSessionsControllerTest < ActionController::TestCase
       setup { post :create, :user_session => {:email => 'nobody', :password => 'badpass'} }
 
       should_assign_to(:user_session)
-      should_set_the_flash_to /login failed/i
       should_filter_params :password
       should_render_template :new
     end    
