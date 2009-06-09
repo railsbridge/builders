@@ -89,6 +89,10 @@ h2 {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
+.profile h2 {
+	padding: 20px 0 0 0;
+}
+
 .projects_index h2 {
 	float: left;
 	padding: 20px 0 0 20px;
@@ -739,4 +743,19 @@ form#sort_users div {
   -moz-border-radius-rightbottom: 5px;
   -webkit-border-top-right-radius: 5px;
   -webkit-border-bottom-right-radius: 3px;
+}
+
+.flash {
+  color: #FFF;
+  font-size: 1.8em;
+  text-align: center;
+  padding: 20px 0;
+  font-family: Georgia;
+  letter-spacing: .1em;
+  font-variant: small-caps;
+  text-transform: lowercase;
+}
+
+.flash_notice {
+	color: #FFD;
 }

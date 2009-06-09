@@ -45,7 +45,7 @@
     <div id="page" class="clearfix">
       <% unless flash.empty? %>
         <% flash.each do |key,value| %>
-           <%= content_tag :div, value, :class => "flash-#{key}" %>
+           <%= content_tag :div, value, :class => "flash flash_#{key}" %>
         <% end %>         
       <% end %>
       <%= yield :extra -%>
