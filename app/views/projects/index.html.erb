@@ -17,14 +17,6 @@
           <span>
             <a href="#external_url"><%= h project.website %></a>
           </span>
-          <ul class="project_actions">
-            <li>
-              <%= link_to 'edit', edit_project_path(project) -%>
-            </li>
-            <li>
-              <%= link_to 'delete', project, :confirm => 'Are you sure?', :method => :delete -%>
-            </li>
-          </ul>
         </div>
         <div class="notes">
           <%= h project.description %>
