@@ -3,7 +3,7 @@
   <% form_for(@project) do |form| %>
     <p class="information">
       <strong>Builders</strong> connects volunteers with projects for <strong>501c3 non-profits</strong>. 
-      <a href="#learn_more">Learn more</a>.
+		<%= link_to_static(:about, 'Learn more') -%>.
     </p>
     <%= render :partial => 'form', :locals => {:form => form} -%>
     <div class="submit_field">
