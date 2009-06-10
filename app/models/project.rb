@@ -1,4 +1,4 @@
-require "MD5"
+require 'digest/md5'
 
 class Project < ActiveRecord::Base
   before_create :generate_access_key
@@ -10,6 +10,6 @@ class Project < ActiveRecord::Base
   private
 
   def generate_access_key
-    write_attribute(:access_key, MD5.hexdigest((object_id + rand(255)).to_s))
+    write_attribute(:access_key, Digest::MD5.hexdigest((object_id + rand(255)).to_s))
   end
 end
