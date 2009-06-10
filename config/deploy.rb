@@ -1,7 +1,7 @@
 set :application, "builders"
 set :repository,  "git://github.com/railsbridge/builders.git"
 set :user, "rbadmin"
-set :deploy_via, :remote_cache
+set :deploy_via, :fast_remote_cache
 set :scm, :git
 
 # If you aren't deploying to /u/apps/#{application} on the target
