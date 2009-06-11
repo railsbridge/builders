@@ -19,7 +19,7 @@ role :app, "72.249.191.152"
 role :db,  "72.249.191.152", :primary => true
 
 set :keep_releases, 6
-after "deploy:update", "deploy:link_config"
+after "deploy:update", "deploy:link_files"
 
 namespace :deploy do
   desc "Restarting mod_rails with restart.txt"
@@ -27,9 +27,11 @@ namespace :deploy do
     run "touch #{current_path}/tmp/restart.txt"
   end
 
-  desc "Re-link config files"
-  task :link_config, :roles => :app do
-    run "ln -nsf #{shared_path}/config/smtp_gmail.yml #{current_path}/config/smtp_gmail.yml"
+  desc "Re-link files"
+  task :link_files, :roles => :app do
+    ['config/smtp_gmail.yml', 'db/production.sqlite3'].each do |file|
+      run "ln -nsf #{shared_path}/#{file} #{current_path}/#{file}"
+    end
   end
   
   [:start, :stop].each do |t|
