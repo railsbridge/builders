@@ -29,7 +29,7 @@ namespace :deploy do
 
   desc "Re-link files"
   task :link_files, :roles => :app do
-    ['config/initializers/smtp_gmail.yml', 'db/production.sqlite3'].each do |file|
+    ['config/initializers/smtp_gmail.rb', 'db/production.sqlite3'].each do |file|
       run "ln -nsf #{shared_path}/#{file} #{current_path}/#{file}"
     end
   end
