@@ -3,3 +3,5 @@ log/*.log
 tmp/**/*
 db/*.sqlite3
 config/smtp_gmail.yml.production
+*.swp
+tmp/tags

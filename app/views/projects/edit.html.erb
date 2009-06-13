@@ -1,6 +1,13 @@
+<ul class="actions clearfix">
+  <li>
+    <%= link_to "Delete Project", project_path(@project, :access_key => params[:access_key]), 
+      :method  => :delete, 
+      :confirm => "Are you sure?" %>
+  </li>
+</ul> 
 <div class="projects">
   <h2>Update project</h2>
-   
+  
   <% form_for(@project) do |form| %>
     <%= hidden_field_tag(:access_key, @project.access_key) -%>
     

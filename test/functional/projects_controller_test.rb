@@ -1,6 +1,7 @@
 require File.join(File.dirname(__FILE__), '..', 'test_helper')
  
 class ProjectsControllerTest < ActionController::TestCase
+  
   context 'GET to index' do
     setup { get :index }
     
@@ -98,15 +99,37 @@ class ProjectsControllerTest < ActionController::TestCase
     end
   end
   
+  def self.should_process_project_deletions
+    should_change 'Project.count', :by => -1
+    should_set_the_flash_to /deleted/i
+    should_redirect_to('projects index') {projects_path}
+  end
+
   context 'given a project exists' do
     setup { @project = Factory(:project) }
 
     context 'DELETE to destroy' do
-      setup { delete :destroy, :id => @project.to_param }
       
-      should_eventually "change 'Project.count', :from => 1, :to => 0"
-      should_eventually "set_the_flash_to /deleted/i"
-      should_eventually "redirect_to('project index') { projects_path }"
+      context 'with an invalid access key and nonadmin access' do
+        setup { delete :destroy, :id => @project.to_param}
+        should_not_change 'Project.count'
+        should_set_the_flash_to /access/i
+        should_redirect_to('projets show') {project_path}
+      end
+
+      admin_user do
+        context 'with no access key and admin access' do
+          setup { delete :destroy, :id => @project.to_param}
+          should_process_project_deletions
+        end
+      end
+      
+      context 'with a valid access key' do
+        setup { delete :destroy, :id => @project.to_param, :access_key => @project.access_key }
+        should_process_project_deletions
+      end
     end
   end  
 end
+
+    

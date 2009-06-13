@@ -57,19 +57,26 @@ class ProjectsController < ApplicationController
  
   def destroy
     @project = Project.find(params[:id])
-    @project.destroy
-    flash[:success] = 'Project was successfully deleted.'
- 
+
     respond_to do |format|
-      format.html { redirect_to(projects_url) }
+      if @project.access_key == params[:access_key] || 
+        (current_user && current_user.admin?)
+
+        @project.destroy
+        flash[:success] = 'Project was successfully deleted.'
+        format.html { redirect_to(projects_url) }
+      else
+        flash[:notice] = 'Access Denied'
+        format.html { redirect_to project_url(@project) }
+      end
     end
   end
-end
 
-private
+  private
 
-def get_project
-  @project = Project.find_by_id_and_access_key!(params[:id], params[:access_key])
-rescue ActiveRecord::RecordNotFound
-  render(:nothing => true, :status => :not_found) and return false
+  def get_project
+    @project = Project.find_by_id_and_access_key!(params[:id], params[:access_key])
+  rescue ActiveRecord::RecordNotFound
+    render(:nothing => true, :status => :not_found) and return false
+  end
 end

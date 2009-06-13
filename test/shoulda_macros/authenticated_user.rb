@@ -9,3 +9,5 @@ def authenticated_user(&blk)
     merge_block(&blk)
   end  
 end
+
+
