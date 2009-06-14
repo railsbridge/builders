@@ -1,6 +1,13 @@
 require File.join(File.dirname(__FILE__), '..', 'test_helper')
 
 class PageControllerTest < ActionController::TestCase
+  context 'on GET to :index' do
+    setup { get :index }
+    
+    should_respond_with :success
+    should_render_template :index
+  end
+
   context 'GET to :show' do
     setup do
       PageController.append_view_path('test/static') unless PageController.view_paths.include?('test/static')

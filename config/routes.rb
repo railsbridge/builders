@@ -13,9 +13,10 @@ ActionController::Routing::Routes.draw do |map|
                         :action => 'destroy', 
                         :conditions => { :method => :delete }
                         
-  map.root :login                      
-  
   map.site 'site/:name', :controller => 'page', :action => 'show'
+  map.home '/home', :controller => 'page', :action => 'index'
+  map.root :home
+
   #map.connect ':controller/:action/:id'
   #map.connect ':controller/:action/:id.:format'
 end

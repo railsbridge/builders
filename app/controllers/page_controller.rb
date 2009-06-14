@@ -1,5 +1,9 @@
 class PageController < ApplicationController
   before_filter :ensure_valid, :only => :show
+  
+  def index
+    render
+  end
 
   def show
     render :template => "page/#{current_page}"
