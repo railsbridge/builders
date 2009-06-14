@@ -1,10 +1,9 @@
 h1. Want to contribute?
-
-# add a new Label on "Issues":http://github.com/railsbridge/builders/issues with your GitHub handle
-# add your label to an issue you want to work on (or add a new issue)
-# send a message to hardbap to be added as a collaborator
-# if you'd rather fork make sure you send the pull request to hardbap or else it won't been seen
-# your commit message should include the text "Closes #X" where X is the issue you're closing
+# we prefer branches but will accept patches
+# please make a separate branch/patch for each bug fix or feature
+# there should be an "issue":http://github.com/railsbridge/builders/issues for any submission
+# please don’t send pull requests just update the issue with the url for your fix (or attach the patch) when it’s ready
+# contributions without tests won’t be accepted
 
 We use "Shoulda":http//github.com/thoughtbot/shoulda , "Factory Girl":http://github.com/thoughtbot/factory_girl and "RR":http://github.com/btakita/rr/tree/master for testing.
 
