@@ -1,9 +1,11 @@
 h1. Want to contribute?
-# we prefer branches but will accept patches
-# please make a separate branch/patch for each bug fix or feature
-# there should be an "issue":http://github.com/railsbridge/builders/issues for any submission
-# please don’t send pull requests just update the issue with the url for your fix (or attach the patch) when it’s ready
-# contributions without tests won’t be accepted
+* we prefer branches but will accept patches
+* please make a separate branch/patch for each bug fix or feature
+* there should be an "issue":http://github.com/railsbridge/builders/issues for any submission
+* please don’t send pull requests just update the issue with the url for your fix (or attach the patch) when it’s ready
+* contributions without tests won’t be accepted
+
+If you have any questions send a message to hardbap.
 
 We use "Shoulda":http//github.com/thoughtbot/shoulda , "Factory Girl":http://github.com/thoughtbot/factory_girl and "RR":http://github.com/btakita/rr/tree/master for testing.
 
