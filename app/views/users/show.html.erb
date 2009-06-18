@@ -19,11 +19,14 @@
     <div>
       <em>to:</em> <%= @user.availability_ends -%>
     </div>
+    <div>
+      <em>projects:</em> <%= @user.projects.map { |p| link_to(p.org_name, p)}.to_sentence -%>
+    </div>
   </div>
   <div class="notes">
     <%= safe_textilize(@user.notes) -%>
-  <div class="skills">
-    <%= render :partial => 'skill', :collection => @user.skill_list -%>
-  </div> 
+    <div class="skills">
+      <%= render :partial => 'skill', :collection => @user.skill_list -%>
+    </div>
   </div>
 </div>
