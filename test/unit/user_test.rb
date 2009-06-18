@@ -22,6 +22,9 @@ class UserTest < ActiveSupport::TestCase
   should_be_taggable :skills 
   
   should_not_allow_mass_assignment_of :admin
+  
+  should_have_many :project_volunteers
+  should_have_many :projects, :through => :project_volunteers
 
   context '#deliver_password_reset_instructions' do
     setup do 

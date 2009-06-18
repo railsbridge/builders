@@ -2,6 +2,9 @@ require 'digest/md5'
 
 class Project < ActiveRecord::Base
   before_create :generate_access_key
+  
+  has_many :project_volunteers
+  has_many :volunteers, :through => :project_volunteers
 
   validates_presence_of [:contact_email, :contact_name, :org_name]
 

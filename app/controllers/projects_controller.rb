@@ -28,7 +28,7 @@ class ProjectsController < ApplicationController
   end
  
   def edit
-
+    render
   end
  
   def create

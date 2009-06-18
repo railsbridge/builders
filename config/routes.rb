@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :projects
+  map.resources :project_volunteers, :only => [:create, :delete, :update]
   map.resources :password_resets, :except => [:index, :destroy, :show]
 
   map.resources :users, :as => :volunteers, :except => :destroy

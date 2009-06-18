@@ -1,4 +1,3 @@
-# the
 def should_be_taggable(*attributes)
   klass = model_class
   
