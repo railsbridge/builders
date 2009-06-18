@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   acts_as_authentic
   
+  has_many :project_volunteers
+  has_many :projects, :through => :project_volunteers
+
   validates_presence_of :name
   
   is_taggable :skills

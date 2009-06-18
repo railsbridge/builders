@@ -15,6 +15,9 @@ class ProjectTest < ActiveSupport::TestCase
   should_validate_presence_of :org_name, :contact_name, :contact_email
 
   should_not_allow_mass_assignment_of :access_key
+  
+  should_have_many :project_volunteers
+  should_have_many :volunteers, :through => :project_volunteers
 
   should 'generate access key on create' do
     project = Factory.build(:project)

@@ -18,5 +18,9 @@
 </dl>
  
 <p>
-  <%= link_to 'Back', :back -%>
+  <%= link_to 'Back', :back -%> 
+  <% form_tag '/project_volunteers' do -%>
+    <%= hidden_field_tag('project_volunteer[project_id]', @project.id) -%>
+    <%= submit_tag('Volunteer!', :name => nil) -%>
+  <% end %>
 </p>
