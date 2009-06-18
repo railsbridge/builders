@@ -10,7 +10,7 @@ class ProjectVolunteerTest < ActiveSupport::TestCase
 
   should_have_enum_field :role, 'volunteer', 'tech_lead'
 
-  should_not_allow_mass_assignment_of :role, :user_id, :project_id
+  should_not_allow_mass_assignment_of :role
 
   should_validate_presence_of :role
 end

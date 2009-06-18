@@ -4,7 +4,7 @@ class ProjectVolunteer < ActiveRecord::Base
   
   enum_field :role, ['volunteer', 'tech_lead']
 
-  attr_protected :role, :user_id, :project_id
+  attr_protected :role
 
   validates_presence_of :role
 end
