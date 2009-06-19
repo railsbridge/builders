@@ -213,6 +213,10 @@ a:active {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
+#header h1 a {
+  color: #600;
+}
+
 #header h1 em {
 	color: #C00;
   font-style: normal;
