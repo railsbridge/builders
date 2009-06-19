@@ -16,10 +16,19 @@
   <dt>Approved</dt>
   <dd><%= h @project.approved -%></dd>
 </dl>
- 
-<p>
-  <% form_tag '/project_volunteers' do -%>
-    <%= hidden_field_tag('project_volunteer[project_id]', @project.id) -%>
-    <%= submit_tag('Volunteer!', :name => nil) -%>
-  <% end %>
-</p>
+
+<div>
+  <em>Current Team:</em> <%= @project.volunteers.map {|v| link_to(v.name, v) }.to_sentence -%>
+                         
+</div>
+
+<% if eligible_to_volunteer? -%>
+  <p>
+    <% form_tag '/project_volunteers' do -%>
+      <%= hidden_field_tag('project_volunteer[project_id]', @project.id) -%>
+      <%= submit_tag('Volunteer!', :name => nil) -%>
+    <% end %>
+  </p>
+<% else %>
+  Want to <%= link_to('help out', signup_path) -%>?
+<% end -%>
