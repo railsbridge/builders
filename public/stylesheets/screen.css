@@ -770,7 +770,12 @@ form#sort_users div {
   margin: 10px;
   border: 5px solid #ddd;
 }
+
 .featured_projects ul li, .featured_volunteers ul li {
   font-size: 1.6em;
   font-weight: bold
+}
+
+.profile .avatar {
+  float: left;
 }

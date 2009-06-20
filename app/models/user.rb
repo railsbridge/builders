@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   validates_presence_of :name
   
   is_taggable :skills
+  is_gravtastic
   
   attr_protected :admin
 

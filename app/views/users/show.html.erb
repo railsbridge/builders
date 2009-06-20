@@ -9,6 +9,9 @@
 </h2>
 
 <div class="profile clearfix">
+  <div class="avatar">
+    <%= image_tag @user.gravatar_url, :alt => @user.name %>
+  </div>
   <div class="info">
     <div class="hours">
       <%= pluralize(@user.hours_per_week, 'hour') -%> / week

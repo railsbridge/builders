@@ -13,6 +13,7 @@ Rails::Initializer.run do |config|
   config.gem 'giraffesoft-enum_field',  :lib => 'enum_field',    :source => 'http://gems.github.com'
   config.gem 'RedCloth'
 
+  config.gem 'chrislloyd-gravtastic',   :lib => 'gravtastic',    :source => 'http://gems.github.com'
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
