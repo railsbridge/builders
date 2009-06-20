@@ -17,8 +17,9 @@ Other gems/plugins we use:
 * "enum_field":http://github.com/giraffesonf/enum_field
 * "will_paginate":http://github.com/mislav/will_paginate
 * "forgery":http://github/sevenwire/forgery
-* "trixy_scopes"http://github.com/tomaszmazur/trixy_scopes
-* "gravtastic"http://github.com/chrislloyd/gravtastic
+* "trixy_scopes":http://github.com/tomaszmazur/trixy_scopes
+* "gravtastic:"http://github.com/chrislloyd/gravtastic
+
 h1. Got a feature request or find a bug?
 
 Please open an "Issue":http://github.com/railsbridge/builders/issues
