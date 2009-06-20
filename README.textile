@@ -8,7 +8,7 @@ h1. Want to contribute?
 
 If you have any questions send a message to hardbap.
 
-We use "Shoulda":http//github.com/thoughtbot/shoulda , "Factory Girl":http://github.com/thoughtbot/factory_girl "Webrat":http://github.com/brynary/webrat and "RR":http://github.com/btakita/rr for testing.
+We use "Shoulda":http//github.com/thoughtbot/shoulda , "Factory Girl":http://github.com/thoughtbot/factory_girl , "Webrat":http://github.com/brynary/webrat and "RR":http://github.com/btakita/rr for testing.
 
 Other gems/plugins we use:
 
