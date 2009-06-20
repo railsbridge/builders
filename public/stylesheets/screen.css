@@ -763,3 +763,14 @@ form#sort_users div {
 .flash_notice {
 	color: #FFD;
 }
+
+.featured_projects, .featured_volunteers {
+  float: left;
+  padding: 20px 10px;
+  margin: 10px;
+  border: 5px solid #ddd;
+}
+.featured_projects ul li, .featured_volunteers ul li {
+  font-size: 1.6em;
+  font-weight: bold
+}

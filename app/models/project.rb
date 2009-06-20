@@ -10,6 +10,7 @@ class Project < ActiveRecord::Base
 
   attr_protected :access_key
 
+  include TrixyScopes
   private
 
   def generate_access_key

@@ -7,6 +7,22 @@
       </h2>
     </div>
   </div>
-  <ul class="clearfix">
-  </ul>
+
+  <div class="featured_projects">
+    <h2>Featured Project</h2>
+    <ul>
+      <%- @featured_projects.each do |p| -%>
+        <li><%= link_to p.org_name, project_path(p) %></li>
+      <%- end -%>
+    </ul>
+  </div>
+
+  <div class="featured_volunteers">
+    <h2>Featured Volunteer</h2>
+    <ul>
+      <%- @featured_volunteers.each do |v| -%>
+        <li><%= link_to v.name, user_path(v) %></li>
+      <%- end -%>
+    </ul>
+  </div>
 </div>

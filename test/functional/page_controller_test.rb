@@ -6,6 +6,8 @@ class PageControllerTest < ActionController::TestCase
     
     should_respond_with :success
     should_render_template :index
+    should_assign_to :featured_projects
+    should_assign_to :featured_volunteers
   end
 
   context 'GET to :show' do
