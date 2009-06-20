@@ -8,14 +8,17 @@ h1. Want to contribute?
 
 If you have any questions send a message to hardbap.
 
-We use "Shoulda":http//github.com/thoughtbot/shoulda , "Factory Girl":http://github.com/thoughtbot/factory_girl and "RR":http://github.com/btakita/rr/tree/master for testing.
+We use "Shoulda":http//github.com/thoughtbot/shoulda , "Factory Girl":http://github.com/thoughtbot/factory_girl "Webrat":http://github.com/brynary/webrat and "RR":http://github.com/btakita/rr for testing.
 
 Other gems/plugins we use:
 
 * "authlogic":http://github.com/binarylogic/authlogic
 * "is_taggable":http://github.com/giraffesoft/is_taggable
+* "enum_field":http://github.com/giraffesonf/enum_field
 * "will_paginate":http://github.com/mislav/will_paginate
-
+* "forgery":http://github/sevenwire/forgery
+* "trixy_scopes"http://github.com/tomaszmazur/trixy_scopes
+* "gravtastic"http://github.com/chrislloyd/gravtastic
 h1. Got a feature request or find a bug?
 
 Please open an "Issue":http://github.com/railsbridge/builders/issues
