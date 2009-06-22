@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   before_filter :get_project, :only => [:edit, :update]
 
   def index
-    @projects = Project.all
+    @projects = Project.approved
     
     respond_to do |format|
       format.html      

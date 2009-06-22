@@ -26,7 +26,8 @@ namespace :builders do
                        :org_details   => Forgery(:lorem_ipsum).paragraph,
                        :contact_name  => Forgery(:name).full_name,
                        :contact_email => Forgery(:internet).email_address,
-                       :description   => Forgery(:lorem_ipsum).paragraph)
+                       :description   => Forgery(:lorem_ipsum).paragraph),
+                       :approved      => true
       end
     end
 
