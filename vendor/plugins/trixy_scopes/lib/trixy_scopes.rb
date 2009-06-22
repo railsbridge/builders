@@ -22,7 +22,7 @@ module TrixyScopes
       
       klass.columns.each do |column|
         attribute = column.name
-        quoted_column_name = connection.quote_table_name("#{klass.table_name}.#{attribute}")
+        quoted_column_name = "#{connection.quote_table_name(klass.table_name)}.#{connection.quote_column_name(attribute)}"
         
         named_scope "#{attribute}_is", lambda { |value| { :conditions => { attribute => value } } }
         named_scope "#{attribute}_is_not", lambda { |value| { :conditions => ["#{quoted_column_name} != ?", value] } }
