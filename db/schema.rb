@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090617184253) do
+ActiveRecord::Schema.define(:version => 20090622205023) do
 
   create_table "project_volunteers", :force => true do |t|
     t.integer  "user_id"
@@ -53,20 +53,21 @@ ActiveRecord::Schema.define(:version => 20090617184253) do
   add_index "tags", ["name", "kind"], :name => "index_tags_on_name_and_kind"
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                  :null => false
-    t.string   "crypted_password",                       :null => false
-    t.string   "password_salt",                          :null => false
-    t.string   "persistence_token",                      :null => false
-    t.string   "single_access_token",                    :null => false
-    t.string   "perishable_token",                       :null => false
+    t.string   "email",                                    :null => false
+    t.string   "crypted_password",                         :null => false
+    t.string   "password_salt",                            :null => false
+    t.string   "persistence_token",                        :null => false
+    t.string   "single_access_token",                      :null => false
+    t.string   "perishable_token",                         :null => false
     t.string   "name"
     t.date     "availability_starts"
     t.date     "availability_ends"
     t.integer  "hours_per_week"
     t.text     "notes"
-    t.boolean  "admin",               :default => false
+    t.boolean  "admin",                 :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "receive_notifications", :default => false
   end
 
 end

@@ -20,8 +20,13 @@
   <%= form.label :hours_per_week -%>
   <%= form.select :hours_per_week, 0..10 -%>
 </div>
+<div>
+  <%= form.label :receive_notifications, 'Check here if you want to receive updates from Builders?' -%>
+  <%= form.check_box :receive_notifications -%>
+</div>
 <div class="textarea_field">
   <%= form.label :notes, 'Tell us a little something about yourself' -%>
   <%= form.text_area :notes -%>
   (<%= link_to('Textile', 'http://hobix.com/textile/', :target => '_blank') -%> supported)   
 </div>
+
