@@ -14,6 +14,7 @@ class NotifierTest < ActionMailer::TestCase
     email = ActionMailer::Base.deliveries.first
     assert_contains email.to, project.contact_email
     assert_contains email.from, /builders@railsbridge.org/i
+    assert_contains email.bcc, /builders@railsbridge.org/i
     assert_match /thank you for signing up/i, email.subject
     assert_match /http:\/\/builders.railsbridge.org\/projects\/#{project.id}\/edit\?access_key=#{project.access_key}/,
                 email.body

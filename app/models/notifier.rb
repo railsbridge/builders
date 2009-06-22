@@ -5,6 +5,7 @@ class Notifier < ActionMailer::Base
     recipients project.contact_email
     subject 'Thank you for signing up.'
     from 'RailsBridge Builders <builders@railsbridge.org>'
+    bcc 'builders@railsbridge.org'
     sent_on Time.now
     body :project => project
   end
