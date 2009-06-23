@@ -21,9 +21,9 @@ namespace :deploy do
   task :default do
     set :migrate_target, :latest
     update_code
-    migrate
     symlink
     link_files
+    migrate
     restart
   end
   
