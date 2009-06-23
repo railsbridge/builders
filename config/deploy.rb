@@ -10,18 +10,23 @@ set :scm, :git
 # via the :deploy_to variable:
 # set :deploy_to, "/Library/Rails/#{application}"
 
-# If you aren't using Subversion to manage your source code, specify
-# your SCM below:
-# set :scm, :subversion
-
 role :web, "72.249.191.152"
 role :app, "72.249.191.152"
 role :db,  "72.249.191.152", :primary => true
 
-set :keep_releases, 6
-after "deploy:update", "deploy:link_files"
+set :keep_releases, 4
 
 namespace :deploy do
+  desc "Default deploy - updated to run migrations"
+  task :default do
+    set :migrate_target, :latest
+    update_code
+    migrate
+    symlink
+    link_files
+    restart
+  end
+  
   desc "Restarting mod_rails with restart.txt"
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "touch #{current_path}/tmp/restart.txt"
