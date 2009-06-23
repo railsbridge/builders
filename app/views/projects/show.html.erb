@@ -21,6 +21,6 @@
       <%= submit_tag('Volunteer!', :name => nil) -%>
     <% end %>
   </p>
-<% else %>
+<% elsif !logged_in? %>
   Want to <%= link_to('help out', signup_path) -%>?
 <% end -%>
