@@ -2,12 +2,15 @@ require File.join(File.dirname(__FILE__), '..', 'test_helper')
 
 class PageControllerTest < ActionController::TestCase
   context 'on GET to :index' do
-    setup { get :index }
+    setup do 
+      Factory(:project, :approved => true)
+      Factory(:user)
+      get :index
+    end
     
-    should_respond_with :success
     should_render_template :index
-    should_assign_to :featured_projects
-    should_assign_to :featured_volunteers
+    should_assign_to :featured_project
+    should_assign_to :featured_volunteer
   end
 
   context 'GET to :show' do

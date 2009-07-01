@@ -2,10 +2,8 @@ class PageController < ApplicationController
   before_filter :ensure_valid, :only => :show
   
   def index
-    @featured_projects = Project.random.find(:all, :limit => 1)
-    @featured_volunteers = User.random.find(:all, :limit => 1)
-
-    render
+    @featured_project = Project.approved.random.first
+    @featured_volunteer = User.random.first
   end
 
   def show
