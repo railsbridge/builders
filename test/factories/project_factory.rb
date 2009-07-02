@@ -7,4 +7,5 @@ Factory.define :project do |factory|
   factory.website 'www.christianchildrensfund.org'
   factory.description 'We could really use a forum for our web site.'
   factory.approved 'false'
+  factory.notes 'please help the children. "Sally\'s Home Page":http://sallystruthers.com'
 end

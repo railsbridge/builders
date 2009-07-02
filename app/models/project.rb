@@ -11,6 +11,11 @@ class Project < ActiveRecord::Base
   attr_protected :access_key
 
   include TrixyScopes
+
+  def team_member?(user)
+    volunteers.include?(user)
+  end
+
   private
 
   def generate_access_key

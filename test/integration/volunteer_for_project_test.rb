@@ -15,10 +15,7 @@ class VolunteerForProjectTest < ActionController::IntegrationTest
       end
       
       should 'not display the Volunteer! button' do
-        visit login_path
-        fill_in 'Email', :with => @user.email
-        fill_in 'Password', :with => 'secret'
-        click_button 'LOGIN'
+        login
 
         visit project_path(@project)
         
@@ -30,10 +27,7 @@ class VolunteerForProjectTest < ActionController::IntegrationTest
     context 'not yet assigned to the project' do
 
       should 'be allowed to volunteer for a project' do
-        visit login_path
-        fill_in 'Email', :with => @user.email
-        fill_in 'Password', :with => 'secret'
-        click_button 'LOGIN'
+        login
 
         visit project_path(@project)
       

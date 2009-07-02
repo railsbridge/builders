@@ -14,4 +14,15 @@ class ActiveSupport::TestCase
 
   self.use_transactional_fixtures = true
   self.use_instantiated_fixtures  = false
+
+  # Login helper for integration tests.
+  # if your test does not define a @user this will do that for you
+  def login
+    @user = Factory(:user) unless defined?(@user)
+
+    visit login_path
+    fill_in 'Email', :with => @user.email
+    fill_in 'Password', :with => 'secret'
+    click_button 'LOGIN'
+  end
 end

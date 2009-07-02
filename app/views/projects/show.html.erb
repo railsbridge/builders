@@ -7,11 +7,14 @@
   <dd><%= h @project.website -%></dd>
   <dt>Description</dt>
   <dd><%= h @project.description -%></dd>
+  <% if @project.team_member?(current_user) -%>
+    <dt>Notes</dt>
+    <dd><%= safe_textilize(@project.notes) -%></dd>
+  <% end -%>
 </dl>
 
 <div>
   <em>Current Team:</em> <%= @project.volunteers.map {|v| link_to(v.name, v) }.to_sentence -%>
-                         
 </div>
 
 <% if eligible_to_volunteer? -%>
