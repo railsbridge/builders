@@ -59,8 +59,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
 
     respond_to do |format|
-      if @project.access_key == params[:access_key] || 
-        (current_user && current_user.admin?)
+      if @project.access_key == params[:access_key] || admin?
 
         @project.destroy
         flash[:success] = 'Project was successfully deleted.'
