@@ -12,6 +12,7 @@ class ProjectTest < ActiveSupport::TestCase
   should_have_db_column :approved,      :type => "boolean"
   should_have_db_column :access_key,    :type => "string"
   should_have_db_column :notes,         :type => "text"
+  should_have_db_column :status,        :type => "string"
 
   should_validate_presence_of :org_name, :contact_name, :contact_email
 
@@ -78,6 +79,17 @@ class ProjectTest < ActiveSupport::TestCase
     
     should 'be false if the user has not volunteered for the project' do
       assert ! @project.team_member?(@user)
+    end
+  end
+
+  context "when a project is approved" do
+    setup do
+      @project = Factory(:project)
+    end
+
+    should "mark the project as approved" do
+      @project.approve
+      assert @project.approved
     end
   end
 end

@@ -14,6 +14,12 @@ Rails::Initializer.run do |config|
   config.gem 'RedCloth'
 
   config.gem 'chrislloyd-gravtastic',   :lib => 'gravtastic',    :source => 'http://gems.github.com'
+
+  config.gem 'pluginaweek-state_machine', 
+    :lib     => 'state_machine',
+    :version => '0.7.6',
+    :source  => 'http://gems.github.com'
+
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.

@@ -59,8 +59,8 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       if @project.access_key == params[:access_key] || admin?
 
-        @project.destroy
-        flash[:success] = 'Project was successfully deleted.'
+        @project.cancel
+        flash[:success] = 'Project was successfully cancelled.'
         format.html { redirect_to(projects_url) }
       else
         flash[:notice] = 'Access Denied'

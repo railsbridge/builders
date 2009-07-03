@@ -22,12 +22,13 @@ namespace :builders do
       Project.delete_all
 
       5.times do
-        Project.create(:org_name      => Forgery(:name).company_name,
+        p = Project.create(:org_name      => Forgery(:name).company_name,
                        :org_details   => Forgery(:lorem_ipsum).paragraph,
                        :contact_name  => Forgery(:name).full_name,
                        :contact_email => Forgery(:internet).email_address,
                        :description   => Forgery(:lorem_ipsum).paragraph,
                        :approved      => true)
+        p.approve
       end
     end
 

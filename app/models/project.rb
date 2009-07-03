@@ -1,6 +1,8 @@
 require 'digest/md5'
 
 class Project < ActiveRecord::Base
+  named_scope :active, :conditions => {:status => "active"}
+
   before_create :generate_access_key
   
   has_many :project_volunteers
@@ -24,7 +26,43 @@ class Project < ActiveRecord::Base
     end
   end
 
+  state_machine :status, :initial => :unapproved do
+    before_transition :on => :approve, :do => :stamp_approval
+
+    event :approve do
+      transition :unapproved => :active
+    end
+
+    event :cancel do
+      transition :active => :cancelled
+    end
+
+    event :mark_completed do
+      transition :active => :complete
+    end
+
+    state :unapproved do
+
+    end
+
+    state :active do
+
+    end
+
+    state :cancelled do
+
+    end
+
+    state :complete do
+
+    end
+
+  end
+
   private
+  def stamp_approval
+    self.approved = true
+  end
 
   def generate_access_key
     write_attribute(:access_key, Digest::MD5.hexdigest((object_id + rand(255)).to_s))

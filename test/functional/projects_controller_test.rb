@@ -100,13 +100,13 @@ class ProjectsControllerTest < ActionController::TestCase
   end
   
   def self.should_process_project_deletions
-    should_change 'Project.count', :by => -1
-    should_set_the_flash_to /deleted/i
+    should_change 'Project.active.count', :by => -1
+    should_set_the_flash_to /cancelled/i
     should_redirect_to('projects index') {projects_path}
   end
 
   context 'given a project exists' do
-    setup { @project = Factory(:project) }
+    setup { @project = Factory(:active_project) }
 
     context 'DELETE to destroy' do
       

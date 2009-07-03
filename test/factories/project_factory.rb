@@ -9,3 +9,8 @@ Factory.define :project do |factory|
   factory.approved 'false'
   factory.notes 'please help the children. "Sally\'s Home Page":http://sallystruthers.com'
 end
+
+Factory.define :active_project, :parent => :project do |factory|
+  factory.status "active"
+  factory.approved true
+end
