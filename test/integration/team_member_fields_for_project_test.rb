@@ -36,6 +36,10 @@ class TeamMemberFieldsForProjectTest < ActionController::IntegrationTest
       should 'display the notes in Textile' do
         assert_have_selector('a', :href => 'http://sallystruthers.com')
       end
+      
+      should 'have the Edit link' do
+        assert_have_selector('a', :href => edit_project_path(@project))
+      end
     end
 
     context 'who has not volunteered' do
