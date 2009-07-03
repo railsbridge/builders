@@ -55,7 +55,7 @@ class ProjectsControllerTest < ActionController::TestCase
     context 'with invalid access key' do
       setup { get :edit, :id => @project.to_param, :access_key => 'a_bad_access_key' }
 
-      should_respond_with :not_found
+      should_respond_with :unauthorized
     end
 
     context 'with valid access key' do
@@ -83,7 +83,7 @@ class ProjectsControllerTest < ActionController::TestCase
                      :project => Factory.attributes_for(:project)
       end
       
-      should_respond_with :not_found
+      should_respond_with :unauthorized
     end
 
     context 'with valid access key' do

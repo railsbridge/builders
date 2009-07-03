@@ -1,8 +1,6 @@
 class ProjectsController < ApplicationController
-  verify :params => :access_key, :only => [:edit, :update], 
-                                 :render => {:nothing => true, :status => :unauthorized}
-  before_filter :get_project, :only => [:edit, :update]
-
+  before_filter :authorize, :only => [:edit, :update]
+  
   def index
     @projects = Project.approved
     
@@ -73,9 +71,11 @@ class ProjectsController < ApplicationController
 
   private
 
-  def get_project
-    @project = Project.find_by_id_and_access_key!(params[:id], params[:access_key])
-  rescue ActiveRecord::RecordNotFound
-    render(:nothing => true, :status => :not_found) and return false
+  def authorize
+    @project = Project.find(params[:id])
+    
+    unless @project.authorized?(params[:access_key].blank? ? current_user : params[:access_key])
+      render(:nothing => true, :status => :unauthorized) and return false
+    end
   end
 end

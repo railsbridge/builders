@@ -29,6 +29,39 @@ class ProjectTest < ActiveSupport::TestCase
     assert_not_nil project.access_key
   end
 
+  context '#authorized?' do
+    setup { @project = Factory(:project, :approved => true) }
+    
+    should 'grant access with correct access_key' do
+      access_key = @project.access_key
+
+      assert @project.authorized?(access_key)
+    end
+
+    should 'not grant access with bad access_key' do
+      assert ! @project.authorized?('bad-key')
+    end
+    
+    should 'grant access to an admin' do
+      user = Factory(:user, :admin => true)
+      assert @project.authorized?(user)
+    end
+
+    should 'grant access to a team member' do
+      user = Factory(:user)
+      pv = @project.project_volunteers.build(:user => user)
+      pv.role = 'volunteer'
+      @project.save!
+
+      assert @project.authorized?(user)
+    end
+
+    should 'not grant access to a non-admin, non-team member' do
+      user = Factory(:user)
+      assert ! @project.authorized?(user)
+    end
+  end
+
   context '#team_member?' do
     setup do
       @project = Factory(:project)
@@ -47,5 +80,4 @@ class ProjectTest < ActiveSupport::TestCase
       assert ! @project.team_member?(@user)
     end
   end
-
 end

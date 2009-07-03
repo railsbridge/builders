@@ -16,6 +16,14 @@ class Project < ActiveRecord::Base
     volunteers.include?(user)
   end
 
+  def authorized?(key)
+    if key.is_a?(User)
+      key.admin? || team_member?(key)
+    else
+      self.access_key == key
+    end
+  end
+
   private
 
   def generate_access_key
