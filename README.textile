@@ -3,7 +3,7 @@ h1. Want to contribute?
 * we prefer branches
 * please make a separate branch for each bug fix or feature
 * there should be an "issue":http://github.com/railsbridge/builders/issues for any submission
-* please don’t send pull requests or a message. just update the issue with the url for your fix when it’s ready
+* please don’t send pull requests or messages. just update the issue with the url for your fix when it’s ready
 * contributions without tests won’t be accepted
 
 If you have any questions send a message to hardbap.
