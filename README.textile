@@ -5,6 +5,7 @@ h1. Want to contribute?
 * there should be an "issue":http://github.com/railsbridge/builders/issues for any submission
 * please don’t send pull requests or messages. just update the issue with the url for your fix when it’s ready
 * contributions without tests won’t be accepted
+* your commit message must end with "Closes #X." where X is the issue number. for example: `Fixes the broken home link. Closes #21.`. check out the [intro video](http://github.com/blog/411-github-issue-tracker) for more info.
 
 If you have any questions send a message to hardbap.
 
