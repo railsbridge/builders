@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   before_filter :authorize, :only => [:edit, :update]
   
   def index
-    @projects = Project.approved
+    @projects = Project.with_status(:active)
     
     respond_to do |format|
       format.html      

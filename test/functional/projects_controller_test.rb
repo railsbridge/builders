@@ -100,7 +100,7 @@ class ProjectsControllerTest < ActionController::TestCase
   end
   
   def self.should_process_project_deletions
-    should_change 'Project.active.count', :by => -1
+    should_change 'Project.with_status(:active).count', :by => -1
     should_set_the_flash_to /cancelled/i
     should_redirect_to('projects index') {projects_path}
   end

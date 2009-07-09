@@ -2,7 +2,7 @@ class PageController < ApplicationController
   before_filter :ensure_valid, :only => :show
   
   def index
-    @featured_project = Project.active.random.first
+    @featured_project = Project.with_status(:active).random.first
     @featured_volunteer = User.random.first
   end
 

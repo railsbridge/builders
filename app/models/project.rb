@@ -1,8 +1,8 @@
 require 'digest/md5'
 
 class Project < ActiveRecord::Base
-  named_scope :active, :conditions => {:status => "active"}
-
+  include TrixyScopes
+  
   before_create :generate_access_key
   
   has_many :project_volunteers
@@ -10,9 +10,7 @@ class Project < ActiveRecord::Base
 
   validates_presence_of [:contact_email, :contact_name, :org_name]
 
-  attr_protected :access_key
-
-  include TrixyScopes
+  attr_protected :access_key, :status
 
   def team_member?(user)
     volunteers.include?(user)
@@ -27,10 +25,10 @@ class Project < ActiveRecord::Base
   end
 
   state_machine :status, :initial => :unapproved do
-    before_transition :on => :approve, :do => :stamp_approval
+    other_states :active, :complete, :cancelled
 
     event :approve do
-      transition :unapproved => :active
+      transition [:unapproved, :cancelled] => :active
     end
 
     event :cancel do
@@ -40,29 +38,9 @@ class Project < ActiveRecord::Base
     event :mark_completed do
       transition :active => :complete
     end
-
-    state :unapproved do
-
-    end
-
-    state :active do
-
-    end
-
-    state :cancelled do
-
-    end
-
-    state :complete do
-
-    end
-
   end
 
   private
-  def stamp_approval
-    self.approved = true
-  end
 
   def generate_access_key
     write_attribute(:access_key, Digest::MD5.hexdigest((object_id + rand(255)).to_s))
