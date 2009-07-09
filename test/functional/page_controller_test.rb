@@ -3,13 +3,13 @@ require File.join(File.dirname(__FILE__), '..', 'test_helper')
 class PageControllerTest < ActionController::TestCase
   context 'on GET to :index' do
     setup do 
-      Factory(:project, :approved => true)
+      Factory(:active_project)
       Factory(:user)
       get :index
     end
     
     should_render_template :index
-    should_assign_to :featured_project
+    should_assign_to :featured_project 
     should_assign_to :featured_volunteer
   end
 
