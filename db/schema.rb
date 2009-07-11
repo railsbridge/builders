@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090703192859) do
+ActiveRecord::Schema.define(:version => 20090709154230) do
 
   create_table "project_volunteers", :force => true do |t|
     t.integer  "user_id"
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(:version => 20090703192859) do
     t.string   "contact_email"
     t.string   "website"
     t.text     "description"
-    t.boolean  "approved"
     t.string   "access_key"
     t.datetime "created_at"
     t.datetime "updated_at"
