@@ -11,6 +11,8 @@ If you have any questions send a message to hardbap.
 
 We use "Shoulda":http//github.com/thoughtbot/shoulda , "Factory Girl":http://github.com/thoughtbot/factory_girl , "Webrat":http://github.com/brynary/webrat and "RR":http://github.com/btakita/rr for testing.
 
+Run `rake -T builders` for a list of available rake tasks to set up your development database.
+
 Other gems/plugins we use:
 
 * "authlogic":http://github.com/binarylogic/authlogic
