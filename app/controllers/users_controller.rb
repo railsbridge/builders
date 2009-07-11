@@ -3,7 +3,11 @@ class UsersController < ApplicationController
   before_filter :require_owner, :only => [:edit, :update]
   
   def index
-    @users = User.hours_per_week_greater_than(0).paginate(:page => params[:page], :per_page => 5)
+    order_option = 
+      User::SORTABLE_COLUMNS.include?(params[:order]) ? {:order => params[:order]} : {}
+
+    @users = User.hours_per_week_greater_than(0).paginate({:page => params[:page], 
+      :per_page => 5}.merge(order_option))
     
     respond_to do |format|
       format.html      

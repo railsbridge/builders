@@ -6,6 +6,14 @@
     <div class="notes">
       This is a list of volunteers who are willing to spend time on projects.  
     </div>
+
+    <div class="sort">
+      Sort By: 
+      <%- tab_menu "volunteer_sort" do |t| -%>
+        <%= t.tab "Availability", params.merge({:order => "availability_starts"}) %>
+        <%= t.tab "Recently Updated", params.merge({:order => "updated_at"}) %>
+      <%- end -%>
+    </div>
   </div>
   <ul class="clearfix">
     <%= render @users %>

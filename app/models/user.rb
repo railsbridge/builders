@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   include TrixyScopes
+  SORTABLE_COLUMNS = ["updated_at", "availability_starts"]
 
   acts_as_authentic
   is_taggable :skills
