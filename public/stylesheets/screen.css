@@ -406,12 +406,18 @@ a:active {
 }
 
 #content .users ul li .notes,
-#content .projects ul li .notes,
-#content .profile .notes {
+#content .projects ul li .notes {
   float: left;  
   width: 630px;	
   font-size: 1.2em;
   line-height: 1.833;
+}
+
+#content .profile .notes {
+  float: left;  
+  width: 600px;	
+  font-size: 1.2em;
+  line-height: 1.833;	
 }
 
 #content .notes p {
@@ -778,4 +784,18 @@ form#sort_users div {
 
 .profile .avatar {
   float: left;
+}
+
+/* projects/show page */
+
+.projects #content {
+	padding: 2em;
+}
+
+.projects #content dl {
+	margin: 0;
+}
+
+.projects #content dl dd p {
+	font-size: 1em;
 }

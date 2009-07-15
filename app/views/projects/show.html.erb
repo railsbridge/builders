@@ -14,7 +14,7 @@
 </dl>
 
 <div>
-  <em>Current Team:</em> <%= @project.volunteers.map {|v| link_to(v.name, v) }.to_sentence -%>
+  <p><strong>Current Team:</strong> <%= @project.volunteers.map {|v| link_to(v.name, v) }.to_sentence -%></p>
 </div>
 
 <% if eligible_to_volunteer? -%>
@@ -25,5 +25,5 @@
     <% end %>
   </p>
 <% elsif !logged_in? %>
-  Want to <%= link_to('help out', signup_path) -%>?
+  <p>Want to <%= link_to('help out', signup_path) -%>?</p>
 <% end -%>
