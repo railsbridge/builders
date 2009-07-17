@@ -365,10 +365,10 @@ a:active {
   border-top: 5px solid #DDD;
 }
 
-#content .users ul li strong,
-#content .users ul li span,
-#content .projects ul li strong,
-#content .projects ul li span {
+#content .users ul li .info strong,
+#content .users ul li .info span,
+#content .projects ul li .info strong,
+#content .projects ul li .info span {
 	display: block;
 }
 
