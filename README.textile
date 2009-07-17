@@ -5,14 +5,11 @@ h1. Want to contribute?
 * there should be an "issue":http://github.com/railsbridge/builders/issues for any submission
 * please don’t send pull requests or messages. just update the issue with the url for your fix when it’s ready
 * contributions without tests won’t be accepted
-* your commit message must end with "Closes #X." where X is the issue number. for example: <code>Fixes the broken home link. Closes #21.</code>. check out the "intro video":http://github.com/blog/411-github-issue-tracker for more info.
-
-If you have any questions send a message to hardbap.
-
-We use "Shoulda":http//github.com/thoughtbot/shoulda , "Factory Girl":http://github.com/thoughtbot/factory_girl , "Webrat":http://github.com/brynary/webrat and "RR":http://github.com/btakita/rr for testing.
-
-Run `rake -T builders` for a list of available rake tasks to set up your development database.
-
+* your commit message must end with "Closes #X." where X is the issue number. for example: <code>Fixes the broken home link. Closes #21.</code>. check out the "Github Issues video":http://github.com/blog/411-github-issue-tracker for more info
+* we use "Shoulda":http//github.com/thoughtbot/shoulda , "Factory Girl":http://github.com/thoughtbot/factory_girl , "Webrat":http://github.com/brynary/webrat and "RR":http://github.com/btakita/rr for testing
+* run `rake -T builders` for a list of available rake tasks to set up your development database
+* if you have any questions please send a message to hardbap
+ 
 Other gems/plugins we use:
 
 * "authlogic":http://github.com/binarylogic/authlogic
@@ -20,7 +17,6 @@ Other gems/plugins we use:
 * "enum_field":http://github.com/giraffesonf/enum_field
 * "will_paginate":http://github.com/mislav/will_paginate
 * "forgery":http://github/sevenwire/forgery
-* "trixy_scopes":http://github.com/tomaszmazur/trixy_scopes
 * "gravtastic":http://github.com/chrislloyd/gravtastic
 
 h1. Got a feature request or find a bug?
