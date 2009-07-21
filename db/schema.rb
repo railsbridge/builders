@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090709154230) do
+ActiveRecord::Schema.define(:version => 20090721182612) do
 
   create_table "project_volunteers", :force => true do |t|
     t.integer  "user_id"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20090709154230) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "receive_notifications", :default => false
+    t.string   "aliases"
   end
 
 end

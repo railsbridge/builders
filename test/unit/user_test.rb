@@ -15,6 +15,7 @@ class UserTest < ActiveSupport::TestCase
   should_have_db_column :perishable_token, :type => "string"
   should_have_db_column :admin, :type => "boolean"
   should_have_db_column :receive_notifications, :type => "boolean"
+  should_have_db_column :aliases, :type => "string"
     
   should_be_authentic
   

@@ -3,7 +3,8 @@
     <strong>
       <%= link_to(h(user.name), user) %>
     </strong>
-    <span>
+ 		<%= content_tag(:span, ("(" + h(user.aliases) + ")"), :class => 'alias') if user.aliases %>    
+		<span>
       <%= h user.hours_per_week %> hours / week
     </span>
     <span class="range_start">

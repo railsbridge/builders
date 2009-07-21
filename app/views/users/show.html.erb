@@ -5,7 +5,7 @@
 </ul>
 
 <h2 class="profile_name">
-  <%= h(@user.name) -%>
+  <%= h(@user.name) -%> <%= content_tag(:span, ("(" + h(@user.aliases) + ")"), :class => 'alias') if @user.aliases %>
 </h2>
 
 <div class="profile clearfix">

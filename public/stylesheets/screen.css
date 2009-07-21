@@ -198,6 +198,15 @@ a:active {
 	text-decoration: underline;
 }
 
+.alias {
+	font-size: 0.6em;
+	font-style: italic;
+}
+
+.clear {
+	clear: both;
+}
+
 /* [3]:layout */
 
 #header {

@@ -8,6 +8,10 @@
   <%= form.label :name, 'Name', :class => 'required' -%>
   <%= form.text_field :name -%>
 </div>
+<div class="text_field">
+  <%= form.label :aliases, 'Aliases' -%>
+  <%= form.text_field :aliases -%>
+</div>
 <div class="select_field">
   <%= form.label :availability_starts -%>
   <%= form.date_select :availability_starts -%>
