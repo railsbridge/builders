@@ -16,7 +16,7 @@
 </dl>
 
 <div>
-  <p><strong>Current Team:</strong> <%= @project.volunteers.map {|v| link_to(v.name, v) }.to_sentence -%></p>
+  <p><strong>Current Team:</strong> <%= @project.volunteers.map {|v| link_to(v.name, v)}.to_sentence -%></p>
 </div>
 
 <% if eligible_to_volunteer? -%>
