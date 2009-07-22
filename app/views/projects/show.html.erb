@@ -5,6 +5,8 @@
   <dd><%= h @project.org_details -%></dd>
   <dt>Website</dt>
   <dd><%= h @project.website -%></dd>
+  <dt>Deadline</dt>
+  <dd><%= @project.deadline.strftime('%B %d, %Y') -%></dd>
   <dt>Description</dt>
   <dd><%= h @project.description -%></dd>
   <% if @project.team_member?(current_user) -%>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090721182612) do
+ActiveRecord::Schema.define(:version => 20090721195826) do
 
   create_table "project_volunteers", :force => true do |t|
     t.integer  "user_id"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20090721182612) do
     t.datetime "updated_at"
     t.text     "notes"
     t.string   "status"
+    t.date     "deadline"
   end
 
   add_index "projects", ["status"], :name => "index_projects_on_status"

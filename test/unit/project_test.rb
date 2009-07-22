@@ -12,6 +12,7 @@ class ProjectTest < ActiveSupport::TestCase
   should_have_db_column :access_key,    :type => "string"
   should_have_db_column :notes,         :type => "text"
   should_have_db_column :status,        :type => "string"
+  should_have_db_column :deadline,      :type => "date"
 
   should_validate_presence_of :org_name, :contact_name, :contact_email
 
