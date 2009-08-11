@@ -1,47 +1,47 @@
 class ProjectsController < ApplicationController
   before_filter :authorize, :only => [:edit, :update]
-  
+
   def index
-    @projects = Project.with_status(:active)
-    
+    @projects = Project.with_status([:active, :closed])
+
     respond_to do |format|
-      format.html      
+      format.html
     end
   end
- 
+
   def show
     @project = Project.find(params[:id])
- 
+
     respond_to do |format|
       format.html
     end
   end
- 
+
   def new
     @project = Project.new
- 
+
     respond_to do |format|
       format.html
     end
   end
- 
+
   def edit
     render
   end
- 
+
   def create
     @project = Project.new(params[:project])
- 
+
     respond_to do |format|
       if @project.save
         flash[:success] = 'Project was successfully created.'
-        format.html { redirect_to(@project) }        
+        format.html { redirect_to(@project) }
       else
         format.html { render :action => "new" }
       end
     end
   end
- 
+
   def update
     respond_to do |format|
       if @project.update_attributes(params[:project])
@@ -52,7 +52,7 @@ class ProjectsController < ApplicationController
       end
     end
   end
- 
+
   def destroy
     @project = Project.find(params[:id])
 
@@ -73,7 +73,7 @@ class ProjectsController < ApplicationController
 
   def authorize
     @project = Project.find(params[:id])
-    
+
     unless @project.authorized?(params[:access_key].blank? ? current_user : params[:access_key])
       render(:nothing => true, :status => :unauthorized) and return false
     end
