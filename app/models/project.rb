@@ -11,9 +11,13 @@ class Project < ActiveRecord::Base
   validates_presence_of [:contact_email, :contact_name, :org_name]
 
   attr_protected :access_key, :status
-
+  
   def team_member?(user)
     volunteers.include?(user)
+  end
+
+  def accepting_volunteers?(user)
+    !team_member?(user) && !closed?
   end
 
   def authorized?(key)
@@ -25,18 +29,22 @@ class Project < ActiveRecord::Base
   end
 
   state_machine :status, :initial => :unapproved do
-    other_states :active, :complete, :cancelled
+    other_states :active, :complete, :cancelled, :closed
 
     event :approve do
       transition [:unapproved, :cancelled] => :active
     end
 
     event :cancel do
-      transition :active => :cancelled
+      transition [:active, :closed] => :cancelled
     end
 
     event :mark_completed do
-      transition :active => :complete
+      transition [:active, :closed] => :complete
+    end
+
+    event :close do
+      transition :active => :closed
     end
   end
 

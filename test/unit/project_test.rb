@@ -62,6 +62,30 @@ class ProjectTest < ActiveSupport::TestCase
       assert ! @project.authorized?(user)
     end
   end
+  
+  context '#accepting_volunteers?' do
+    setup do 
+      @project = Factory(:active_project)
+      @user = Factory(:user)
+    end
+    
+    should 'be false if the project is closed to new volunteers' do
+      @project.close
+      assert ! @project.accepting_volunteers?(@user)
+    end
+
+    should 'be false if user is already a team member' do
+      pv = @project.project_volunteers.build(:user => @user)
+      pv.role = 'volunteer'
+      pv.save!
+      @project.reload
+      assert ! @project.accepting_volunteers?(@user)
+    end
+
+    should 'be true if the user is not already on the team' do
+      assert @project.accepting_volunteers?(@user)
+    end
+  end
 
   context '#team_member?' do
     setup do
