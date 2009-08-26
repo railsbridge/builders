@@ -623,7 +623,8 @@ form fieldset h3 {
 
 /* END OF featured box on sign up page */
 
-form#new_user {
+form#new_user,
+form#new_user_session {
 	width: 380px;
 	float: left;	
   background: #FFD;
@@ -854,6 +855,21 @@ form#sort_users div {
 
 .profile .avatar {
   float: left;
+}
+
+.profile h3 {
+	font-size: 1.6em;
+	line-height: 1.375;
+	font-family: georgia;
+}
+
+#content .profile .notes p {
+	font-size: 1.2em;
+	margin: 0 0 1em 0;
+}
+
+.profile .notes div {
+	margin: 0 0 1em 0;
 }
 
 /* projects/show page */

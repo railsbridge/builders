@@ -1,6 +1,4 @@
-<% content_for :extra do -%>
-  <%= render :partial => 'shared/blurb' -%>
-<% end -%>
+<%= render :partial => 'shared/blurb' -%>
 
 <% form_for @user_session, :url => user_session_path do |f| %>
   <%= f.error_messages %>
