@@ -116,18 +116,18 @@ p {
 	line-height: 1.375;
 }
 
-section#extra p,
-section#extra ul,
-section#extra ol,
-section#extra dl {
+section.extra p,
+section.extra ul,
+section.extra ol,
+section.extra dl {
   color: #333;	
   font-size: 1.5em;
   line-height: 1.467;
 }
 
-section#extra ul,
-section#extra ol,
-section#extra dl {
+section.extra ul,
+section.extra ol,
+section.extra dl {
   margin: 1.467em 0;
 }
 
@@ -467,23 +467,23 @@ a:active {
 }
 
 
-#page #extra h2 {
+#page .extra h2 {
   color: #333;
 	font-size: 2.4em;
   line-height: 1.833;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-#page #extra h2 a {
+#page .extra h2 a {
   color: #900;
   text-decoration: none;
 }
 
-#page #extra h2 a:hover {
+#page .extra h2 a:hover {
   border-bottom: 1px solid #900;
 }
 
-#page #extra h2 ins {
+#page .extra h2 ins {
   font-style: italic;
 }
 
@@ -544,10 +544,11 @@ form fieldset h3 {
 	margin: 40px auto;
 }
 
-.users_new #extra,
-.users_create #extra,
-.user_sessions_new #extra,
-.user_sessions_create #extra {
+/*
+.users_new .extra,
+.users_create .extra,
+.user_sessions_new .extra,
+.user_sessions_create .extra {
   margin: 0;
   float: left;
 	width: 380px;
@@ -557,16 +558,76 @@ form fieldset h3 {
   border: 10px solid #300;
 }
 
+*/
 .users_new #content,
 .users_create #content,
 .user_sessions_new #content,
 .user_sessions_create #content{
   margin: 0;
-  float: left;
-	width: 380px;
+  xfloat: left;
+	xwidth: 380px;
   margin: 0 10px;
+  xbackground: #FFD;
+  xpadding: 20px 40px;
+  xborder: 10px solid #300;	
+  border: none;
+}
+
+.content {
+	float: left;
+}
+
+.content div {
   background: #FFD;
-  padding: 20px 40px;
+  padding: 20px 30px;
+  border: 10px solid #300;	
+  margin: 0 40px 40px 0;
+	width: 380px;	
+}
+
+/* featured box on sign up page */
+
+.featured dl,
+.featured dl dd {
+	margin: 0;
+  padding: 0;
+}
+
+.featured dl dt {
+  clear: both;
+	margin: 0 0 .5em 0;
+}
+
+.featured dl dd.volunteer {
+	margin: 0 0 2em 0;
+	padding: 0 0 2em 0;
+	border-bottom: .25em solid #500;
+}
+
+.featured dl dd.volunteer img {
+	margin: 0 1em 0 0;
+}
+
+.featured dl dd.volunteer .bio {
+  width: 280px;
+}
+
+.featured dl dd.volunteer img,
+.featured dl dd.volunteer .bio {
+  float: left;
+}
+
+.featured dl p {
+  font-size: 1em;
+}
+
+/* END OF featured box on sign up page */
+
+form#new_user {
+	width: 380px;
+	float: left;	
+  background: #FFD;
+  padding: 20px 30px;
   border: 10px solid #300;	
 }
 
