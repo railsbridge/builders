@@ -1,6 +1,5 @@
 /*
    title: Builders
-  markup: XHTML 1.0 Strict
 sections: [1]:reset
           [2]:typography
           [3]:layout
@@ -62,7 +61,7 @@ body {
   color: #111;
   background: #500;
 	font-size: .625em;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
 }
 
@@ -81,87 +80,20 @@ h2 {
   margin: 0 0 .611em 0;
 }
 
-.projects h2,
-.profile h2,
-.users h2 {
-	font-size: 2.4em;
-  line-height: .917;	
-  font-family: Georgia, "Times New Roman", Times, serif;
-}
-
-.profile h2 {
-	padding: 20px 0 0 0;
-}
-
-.projects_index h2 {
-	float: left;
-	padding: 20px 0 0 20px;
-}
-
-
-/*
-  .users h2{
-    border-bottom: 5px solid #C33;
-    padding: 0 0 .25em 0;
-  } 
-*/
-
 h3 {
 	font-size: 2.4em;
   line-height: 2.75;
 }
 
-p {
+.projects h2, .profile h2, .users h2 {
+  font-size: 2.4em;
+  line-height: 0.917;
+  font-family: Georgia,"Times New Roman",Times,serif;
+}
+
+p, ul, ol, dl {
 	font-size: 1.6em;
 	line-height: 1.375;
-}
-
-section.extra p,
-section.extra ul,
-section.extra ol,
-section.extra dl {
-  color: #333;	
-  font-size: 1.5em;
-  line-height: 1.467;
-}
-
-section.extra ul,
-section.extra ol,
-section.extra dl {
-  margin: 1.467em 0;
-}
-
-footer p {
-	font-variant: small-caps;
-  text-transform: lowercase;
-  letter-spacing: .0859375em;
-}
-
-small {
-  font-size: 1.2em;
-  line-height: 1.833;	
-}
-
-blockquote {
-	margin: 1.1em;
-  padding: 1.1em;
-  background: #EEE;
-  color: #222;
-}
-
-blockquote p {
-  font-size: 1.5em;
-  line-height: 1.467;
-}
-
-section p {
-  text-indent: 1.375em;
-}
-
-ul, ol, dl {
-	font-size: 1.6em;
-	margin: 1.375em 0;
-	line-height: 1.375;	
 }
 
 ul {
@@ -172,19 +104,12 @@ ol {
   list-style-type: lower-roman;	
 }
 
-dt {
-  font-weight: bold;
-}
+small {
+  font-size: 1.5em;
+  line-height: 1.467;
 
-dd {
-  margin: 0 1.375em;
-}
-
-th, td {
   font-size: 1.2em;
   line-height: 1.833;	
-  text-align: left;
-  padding: 0 1.5em 0 0;
 }
 
 a {
@@ -210,7 +135,7 @@ a:active {
 /* [3]:layout */
 
 #header {
-	background: #FFD;
+	background: #FFFFE9;
 }
 
 #header h1 {
@@ -340,7 +265,8 @@ a:active {
 }
 
 #content .profile p {
-	margin: 0 0 1.375em 0;
+  clear: left;
+	margin: 0 0 1.375em 230px;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
@@ -367,11 +293,7 @@ a:active {
 	clear: left;
   padding: 20px 10px;
   list-style-type: none;
-}
-
-#content .users ul li.odd,
-#content .projects ul li.odd {
-  border-top: 5px solid #DDD;
+  border-bottom: 5px solid #DDD;
 }
 
 #content .users ul li .info strong,
@@ -564,13 +486,9 @@ form fieldset h3 {
 .user_sessions_new #content,
 .user_sessions_create #content{
   margin: 0;
-  xfloat: left;
+  border: none;
 	xwidth: 380px;
   margin: 0 10px;
-  xbackground: #FFD;
-  xpadding: 20px 40px;
-  xborder: 10px solid #300;	
-  border: none;
 }
 
 .content {
@@ -578,11 +496,11 @@ form fieldset h3 {
 }
 
 .content div {
-  background: #FFD;
-  padding: 20px 30px;
-  border: 10px solid #300;	
-  margin: 0 40px 40px 0;
 	width: 380px;	
+  padding: 20px 30px;
+	background: #FFFFE9;
+  margin: 0 40px 40px 0;
+  border: 10px solid #300;	
 }
 
 /* featured box on sign up page */
@@ -627,8 +545,8 @@ form#new_user,
 form#new_user_session {
 	width: 380px;
 	float: left;	
-  background: #FFD;
   padding: 20px 30px;
+	background: #FFFFE9;
   border: 10px solid #300;	
 }
 
@@ -838,7 +756,7 @@ form#sort_users div {
 }
 
 .flash_notice {
-	color: #FFD;
+	color: #FFFFE9;
 }
 
 .featured_projects, .featured_volunteers {
