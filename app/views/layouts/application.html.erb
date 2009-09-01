@@ -1,18 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">  
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Builders::RailsBridge.org</title>
-    <%= stylesheet_link_tag 'screen', :media => 'screen' -%>    
+    <%= stylesheet_link_tag 'screen', :media => 'screen' -%>
     <!--[if IE]>
       <link rel="stylesheet" href="/stylesheets/ie.css" type="text/css" media="screen, projection">
     <![endif]-->
-		<%= javascript_include_tag :defaults %>
   </head>
-  <body class="<%= body_class %>">   
+  <body class="<%= body_class %>">
     <div id="header">
       <h1><%= link_to "Builders <em>::</em> <span>RailsBridge.org</span>", "/" %></h1>
-      <div class="nav clearfix">  
+      <div class="nav clearfix">
         <ul>
           <li class="projects">
             <%= link_to 'projects', projects_path -%>
@@ -29,30 +28,30 @@
             <li class="logout">
               <%= link_to('logout', logout_path, :method => :delete) -%>
             </li>
-          </ul>      
+          </ul>
         <% else %>
           <ul class="user">
             <li class="signup">
-              <%= link_to('join', signup_path) -%> 
+              <%= link_to('join', signup_path) -%>
             </li>
             <li class="login">
               <%= link_to('login', login_path) -%>
             </li>
-          </ul>            
+          </ul>
         <% end %>
       </div><!-- .nav -->
-    </div><!-- #header -->  
+    </div><!-- #header -->
 
     <div id="page" class="clearfix">
       <% unless flash.empty? %>
         <% flash.each do |key,value| %>
            <%= content_tag :div, value, :class => "flash flash_#{key}" %>
-        <% end %>         
+        <% end %>
       <% end %>
       <%= yield :extra -%>
       <div id="content">
         <%= yield -%>
-      </div>      
+      </div>
     </div>
 
     <div id="footer">
@@ -63,10 +62,10 @@
         <li><%= link_to_static(:terms, 'terms & conditions') %></li>
       </ul>
     </div>
-    
+
     <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js',
                                'http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/jquery-ui.min.js',
-                               'application' -%> 
+                               'application' -%>
 
    <%= render :partial => "shared/google_analytics" %>
   </body>
