@@ -1,24 +1,26 @@
 require File.join(File.dirname(__FILE__), '..', 'test_helper')
 
 class VolunteerForProjectTest < ActionController::IntegrationTest
+  setup :featured
+
   context 'a Volunteer visiting a Project page' do
-    setup do 
+    setup do
       @user = Factory(:user)
       @project = Factory(:project)
     end
-    
+
     context 'already working on this project' do
       setup do
-        Factory(:project_volunteer, :user => @user, 
-                                    :project => @project, 
+        Factory(:project_volunteer, :user => @user,
+                                    :project => @project,
                                     :role => 'volunteer')
       end
-      
+
       should 'not display the Volunteer! button' do
         login
 
         visit project_path(@project)
-        
+
         assert_contain @user.name
         assert_have_no_selector('input', :type => 'button', :value => 'Volunteer!')
       end
@@ -30,9 +32,9 @@ class VolunteerForProjectTest < ActionController::IntegrationTest
         login
 
         visit project_path(@project)
-      
+
         click_button 'Volunteer!'
-      
+
         assert_equal user_path(@user), path
         assert_contain 'Thanks for volunteering.'
         assert_contain @project.org_name

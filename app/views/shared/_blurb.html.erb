@@ -1,7 +1,7 @@
 <div class="content">
   <div class="extra">
     <h2>
-      <strong>Builders</strong> connects 
+      <strong>Builders</strong> connects
       <%= link_to 'volunteers', users_path -%> with <%= link_to 'projects', projects_path -%> for <ins>501c3 non-profits</ins>.
     </h2>
   </div>
@@ -9,21 +9,25 @@
     <dl>
       <dt>Featured Volunteer</dt>
       <dd class="volunteer clearfix">
-        <img src="/images/photo.jpg" alt="" />
+        <%= image_tag @featured_volunteer.gravatar_url,
+                      :alt => @featured_volunteer.name %>
+
         <span class="bio">
-          <a href="#">
-            Joe Someuser
-          </a>
-          <p>An excerpt from the bio goes here. An excerpt from the bio goes here. An excerpt from the bio goes here.</p>
+          <%= link_to @featured_volunteer.name, @featured_volunteer %>
+          <p>
+            <%= truncate(safe_textilize(@featured_volunteer.notes),
+                         :length => 75) %>
+          </p>
         </span>
       </dd>
       <dt>Featured Project</dt>
       <dd class="project clearfix">
-        <a href="#">
-          An Awesome Project
-        </a>
-        <p>An excerpt from the project goes here. An excerpt from the project goes here. An excerpt from the project goes here.</p>
+        <%= link_to @featured_project.org_name, @featured_project %>
+        <p>
+          <%= truncate(@featured_project.org_details,
+                       :length => 75) %>
+        </p>
       </dd>
-    </dl>    
+    </dl>
   </div>
 </div>

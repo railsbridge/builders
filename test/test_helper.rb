@@ -1,7 +1,7 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'test_help'
-require "authlogic/test_case" 
+require "authlogic/test_case"
 require "webrat"
 
 Webrat.configure do |config|
@@ -24,5 +24,10 @@ class ActiveSupport::TestCase
     fill_in 'Email', :with => @user.email
     fill_in 'Password', :with => 'secret'
     click_button 'LOGIN'
+  end
+
+  def featured
+    Factory(:user)
+    Factory(:active_project)
   end
 end

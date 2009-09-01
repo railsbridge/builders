@@ -1,6 +1,8 @@
 require File.join(File.dirname(__FILE__), '..', 'test_helper')
 
 class TeamMemberFieldsForProjectTest < ActionController::IntegrationTest
+  setup :featured
+
   context 'a site visitor' do
     setup do
       @project = Factory(:project)
@@ -27,7 +29,7 @@ class TeamMemberFieldsForProjectTest < ActionController::IntegrationTest
 
         visit project_path(@project)
       end
-      
+
       should 'see the Project\'s Notes' do
         assert_contain('Notes')
         assert_contain("please help the")
@@ -36,7 +38,7 @@ class TeamMemberFieldsForProjectTest < ActionController::IntegrationTest
       should 'display the notes in Textile' do
         assert_have_selector('a', :href => 'http://sallystruthers.com')
       end
-      
+
       should 'have the Edit link' do
         assert_have_selector('a', :href => edit_project_path(@project))
       end
@@ -44,7 +46,7 @@ class TeamMemberFieldsForProjectTest < ActionController::IntegrationTest
 
     context 'who has not volunteered' do
       setup { visit project_path(@project) }
-      
+
       should 'not see the Project\'s Notes' do
         assert_not_contain('Notes')
         assert_not_contain("please help the")

@@ -1,14 +1,18 @@
 require File.join(File.dirname(__FILE__), '..', 'test_helper')
 
 class UserSessionsControllerTest < ActionController::TestCase
-  
+
   context "on GET to new" do
     context 'when not logged in' do
-      setup { get :new }
+      setup do
+        Factory(:user)
+        Factory(:active_project)
+        get :new
+      end
 
-      should_respond_with :success
       should_render_template :new
       should_assign_to(:user_session)
+      should_show_featured_blurb
     end
 
     authenticated_user do
@@ -18,8 +22,8 @@ class UserSessionsControllerTest < ActionController::TestCase
       should_not_assign_to(:user_session)
     end
   end
-  
-  context "on PUT to create" do    
+
+  context "on PUT to create" do
     context "with valid credentials" do
       setup do
         @user = Factory(:user)
@@ -29,28 +33,34 @@ class UserSessionsControllerTest < ActionController::TestCase
       should_assign_to(:user_session)
       should_set_the_flash_to /login successful/i
       should_filter_params :password
-      should_redirect_to("User's homepage") {user_path(@user)}      
+      should_redirect_to("User's homepage") {user_path(@user)}
     end
-    
+
     context "with invalid credentials" do
-      setup { post :create, :user_session => {:email => 'nobody', :password => 'badpass'} }
+      setup do
+        Factory(:user)
+        Factory(:active_project)
+        post :create,
+             :user_session => {:email => 'nobody', :password => 'badpass'}
+      end
 
       should_assign_to(:user_session)
       should_filter_params :password
       should_render_template :new
-    end    
+      should_show_featured_blurb
+    end
   end
-  
+
   authenticated_user do
     context "on DELETE to :destroy" do
-      setup { delete :destroy }    
+      setup { delete :destroy }
 
       should_redirect_to('login') { login_path }
       should_set_the_flash_to /logout successful/i
-    
+
       should "destroy the session" do
         assert_nil UserSession.find
-      end    
+      end
     end
   end
 end
