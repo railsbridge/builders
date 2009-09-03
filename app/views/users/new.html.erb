@@ -1,24 +1,25 @@
 <%= render :partial => 'shared/blurb' -%>
-
-<% form_for(@user) do |form| %>
-  <%= form.error_messages %>
-  <div class="text_field">
-    <%= form.label :name -%>
-    <%= form.text_field :name -%>
-  </div>
-  <div class="text_field">
-    <%= form.label :email -%>
-    <%= form.text_field :email -%>
-  </div>
-  <div class="password_field">
-    <%= form.label :password -%>
-    <%= form.password_field :password -%>
-  </div>
-  <div class="password_field">
-    <%= form.label :password_confirmation -%>
-    <%= form.password_field :password_confirmation -%>
-  </div>
-  <div class="submit_field">
-    <%= form.submit 'JOIN' -%>
-  </div>
+<% unless logged_in? %>
+  <% form_for(@user) do |form| %>
+    <%= form.error_messages %>
+    <div class="text_field">
+      <%= form.label :name -%>
+      <%= form.text_field :name -%>
+    </div>
+    <div class="text_field">
+      <%= form.label :email -%>
+      <%= form.text_field :email -%>
+    </div>
+    <div class="password_field">
+      <%= form.label :password -%>
+      <%= form.password_field :password -%>
+    </div>
+    <div class="password_field">
+      <%= form.label :password_confirmation -%>
+      <%= form.password_field :password_confirmation -%>
+    </div>
+    <div class="submit_field">
+      <%= form.submit 'JOIN' -%>
+    </div>
+  <% end %>
 <% end %>
