@@ -9,6 +9,10 @@
   <%= form.text_field :name -%>
 </div>
 <div class="text_field">
+  <%= form.label :github_name, 'Github ID' %>
+  <%= form.text_field :github_name %>
+</div>
+<div class="text_field">
   <%= form.label :aliases, 'Aliases' -%>
   <%= form.text_field :aliases -%>
 </div>
@@ -31,6 +35,5 @@
 <div class="textarea_field">
   <%= form.label :notes, 'Tell us a little something about yourself' -%>
   <%= form.text_area :notes -%>
-  (<%= link_to('Textile', 'http://hobix.com/textile/', :target => '_blank') -%> supported)   
+  (<%= link_to('Textile', 'http://hobix.com/textile/', :target => '_blank') -%> supported)
 </div>
-
