@@ -8,7 +8,7 @@
       <strong>Website</strong>
     </div>
     <div>
-      <%= h @project.website -%>
+      <%= link_to(h(@project.website), @project.website) -%>
     </div>
     <div>
       <strong>Deadline</strong>
@@ -17,7 +17,7 @@
       <%= @project.deadline.try(:strftime,'%B %d, %Y') -%>
     </div>
     <div>
-      <strong>Current Team:</strong> 
+      <strong>Current Team:</strong>
       <div>
         <%= @project.volunteers.map {|v| link_to(v.name, v)}.to_sentence -%>
       </div>
@@ -25,7 +25,7 @@
   </div>
 
   <div class="notes">
-  
+
       <h3>Org details</h3>
       <div>
         <%= h @project.org_details -%>
@@ -42,7 +42,7 @@
       <% end -%>
     </dl>
   </div>
-    
+
   <% if eligible_to_volunteer? -%>
     <p>
       <% form_tag '/project_volunteers' do -%>
