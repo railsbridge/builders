@@ -1,7 +1,7 @@
 <ul class="actions clearfix">
   <li>
     <%= link_to('add a project', new_project_path) -%>
-  </li> 
+  </li>
 </ul>
 
 <h2>Projects</h2>
@@ -12,10 +12,10 @@
       <li class="clearfix <%= cycle('even', 'odd', :name => 'row') %>">
         <div class="info">
           <strong>
-            <%= link_to (h project.org_name), project %>
+            <%= link_to(h(project.org_name), project) %>
           </strong>
           <span>
-            <a href="#external_url"><%= h project.website %></a>
+            <%= link_to(h(project.website), project.website) %>
           </span>
         </div>
         <div class="notes">
@@ -25,4 +25,3 @@
     <% end %>
   </ul>
 </div>
-
