@@ -2,16 +2,16 @@ require 'digest/md5'
 
 class Project < ActiveRecord::Base
   include TrixyScopes
-  
+
   before_create :generate_access_key
-  
+
   has_many :project_volunteers
   has_many :volunteers, :through => :project_volunteers, :source => :user, :class_name => 'User'
 
   validates_presence_of [:contact_email, :contact_name, :org_name]
 
   attr_protected :access_key, :status
-  
+
   def team_member?(user)
     volunteers.include?(user)
   end
@@ -22,7 +22,7 @@ class Project < ActiveRecord::Base
 
   def authorized?(key)
     if key.is_a?(User)
-      key.admin? || team_member?(key)
+      key.admin?
     else
       self.access_key == key
     end
