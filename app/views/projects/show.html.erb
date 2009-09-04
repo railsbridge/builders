@@ -25,22 +25,14 @@
   </div>
 
   <div class="notes">
-
-      <h3>Org details</h3>
-      <div>
-        <%= h @project.org_details -%>
-      </div>
-      <h3>Description</h3>
-      <div>
-        <%= h @project.description -%>
-      </div>
-      <% if @project.team_member?(current_user) -%>
-        <h3>Notes (<%= link_to 'Edit', edit_project_path(@project) -%>)</h3>
-        <div>
-          <%= safe_textilize(@project.notes) -%>
-        </div>
-      <% end -%>
-    </dl>
+    <h3>Org details</h3>
+    <div>
+      <%= h @project.org_details -%>
+    </div>
+    <h3>Description</h3>
+    <div>
+      <%= h @project.description -%>
+    </div>
   </div>
 
   <% if eligible_to_volunteer? -%>
