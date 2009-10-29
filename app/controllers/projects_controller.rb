@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_filter :authorize, :only => [:edit, :update]
-
+  trap_door :only => :create
+  
   def index
     @projects = Project.with_status([:active, :closed])
 

@@ -12,9 +12,12 @@ class ProjectsControllerTest < ActionController::TestCase
   context 'GET to new' do
     setup { get :new }
  
-    should_respond_with :success
     should_render_template :new
     should_assign_to :project
+    
+    should "have the honeypot field" do
+      assert_have_selector "form input#affiliate_id"
+    end
   end
  
   context 'POST to create' do

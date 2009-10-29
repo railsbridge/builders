@@ -9,6 +9,13 @@ Webrat.configure do |config|
   config.open_error_files = false
 end
 
+class ActionController::TestCase
+  include Webrat::Matchers
+  def response_body
+    @response.body
+  end
+end
+
 class ActiveSupport::TestCase
   include RR::Adapters::TestUnit unless include?(RR::Adapters::TestUnit)
 

@@ -1,6 +1,7 @@
 <div class="projects">
   <h2>Create project</h2>
   <% form_for(@project) do |form| %>
+    <%= trap_door_field %>
     <p class="information">
       <strong>Builders</strong> connects volunteers with projects for <strong>501c3 non-profits</strong>. 
 		<%= link_to_static(:about, 'Learn more') -%>.
